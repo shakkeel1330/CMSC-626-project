@@ -5,7 +5,9 @@ import os
 import easygui
 from tkinter import filedialog
 from tkinter import messagebox as mb
-
+#from server_pgm import createSocket_server
+from client_pgm import sendFile
+#from . import server_pgm
 # Major functions of file manager
 
 # open a file box window 
@@ -84,7 +86,10 @@ def list_files():
         print(sortlist[i]+'\n')
         i+=1
     
-
+def shareFile():
+	#createSocket_server()
+	string = open_window()	
+	sendFile(string)
 #Creating the UI of our file manager
 
 root = Tk()
@@ -107,6 +112,11 @@ Button(root, text = "Make a Folder", command = make_folder).grid(row = 75, colum
 Button(root, text = "Remove a Folder", command = remove_folder).grid(row = 65, column =2)
 
 Button(root, text = "List all Files in Directory", command = list_files).grid(row = 85,column = 2)
+
+# Start the server
+
+
+Button(root, text = "Send file to another location", command = shareFile).grid(row = 85,column = 2)
 
 
 
