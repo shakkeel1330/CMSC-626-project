@@ -4,7 +4,8 @@ from os import listdir, mkdir, system, stat,remove
 from wsgiref.util import FileWrapper
 import tempfile
 import shutil
-
+from cryptography.fernet import Fernet
+import psycopg2 as pgad
 
 
 def get_content(path, s_files, s_dirs, h_files, h_dirs):
@@ -49,7 +50,9 @@ def handle_uploaded_file(f, address):
     print("Upload address is"+address)
     with open(address, 'wb+') as destination:
         for chunk in f.chunks():
-            destination.write(chunk)     
+            destination.write(chunk)
+    encryptFile(address)        
+
 
 # For downloading file.
 def send_file(address):
@@ -71,3 +74,34 @@ def handle_make_dir(address):
         mkdir(address)
     except:
         pass
+
+def encryptFile(filepath):
+    # Fetch input file and encrypt it during upload
+    key = Fernet.generate_key()
+    fernet = Fernet(key)
+    with open(filepath,'rb') as file:
+        original = file.read()
+        encrypted = fernet.encrypt(original)
+    sql="INSERT INTO \"public\".\"encryptionKeys\" VALUES("+"\'"+str(filepath)+"\'"+","+"\'"+key.decode()+"\'"+")"
+    runQuery(sql)
+
+def runQuery(sql):
+    try:
+        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        cur = conn.cursor()
+        print('PostgreSQL database version:')
+        print("SQL is"+sql)
+        cur.execute(sql)
+        conn.commit()
+        # display the PostgreSQL database server version
+    #db_version = cur.fetchone()
+    #print(db_version)
+       
+	# close the communication with the PostgreSQL
+        cur.close()
+    except (Exception, pgad.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+            print('Database connection closed.')
