@@ -57,3 +57,19 @@ Private - private user can only.
 
 
 """
+
+
+"""
+Username    fileName    Access
+
+
+Delete file - Delete Query -- COMPLETED
+Permissions 
+-- Table creation
+-- Public/Private toggle
+-- List files visibility
+-- Delete button visibility 
+
+Password Jacking Attack - Shakeel
+
+"""

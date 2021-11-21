@@ -43,6 +43,7 @@ def util_delete_file(file_name):
     try:
         print("File to be removed is"+file_name)
         remove(file_name) 
+        deletefileEntry(file_name)
     except:
         pass
 
@@ -159,3 +160,18 @@ def handle_make_file(address, content):
             file.write(content)
     except:
         pass
+
+def deletefileEntry(filepath):
+    try:
+        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        cur = conn.cursor()
+        print("Filename to be deleted is"+str(filepath))
+        sql = "DELETE FROM \"public\".\"encryptionKeys\" WHERE \"fileName\"=" +"\'"+ str(filepath) +"\'"
+        cur.execute(sql)
+        conn.commit()
+    except (Exception,pgad.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+            print('Database connection closed')
