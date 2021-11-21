@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from os.path import isfile, getsize
-from os import listdir, mkdir, system, stat,remove
+from os import listdir, mkdir, system, stat,remove,rename
 from wsgiref.util import FileWrapper
 import tempfile
 import shutil
@@ -266,4 +266,56 @@ def modifyPermissionindB(file_path,access_level):
     finally:
         if conn is not None:
             conn.close()
-            print('Database connection closed') 
+            #print('Database connection closed') 
+
+def renamefunc(old_path,new_path):
+    try:
+        print("Old path is "+str(old_path))
+        print("New path is "+str(new_path))
+        rename(old_path,new_path)
+        updatefileName(old_path,new_path)
+    except(Exception) as error:
+        print("Error while renaming "+ str(error))
+
+# Invoked when there is a rename of the file or directory
+def updatefileName(old_path,new_path):
+    try:
+        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        cur = conn.cursor()
+        update_key_tbl_sql = "UPDATE \"public\".\"encryptionKeys\" SET \"fileName\" =" + "\'" + new_path + "\'" +"WHERE \"fileName\" = "+"\'"+old_path+"\'"
+        update_filePermission_sql = "UPDATE \"public\".\"filePermission\" SET \"fileName\" =" + "\'" + new_path + "\'" +"WHERE \"fileName\" = "+"\'"+old_path+"\'"
+        cur.execute(update_key_tbl_sql)
+        conn.commit()
+        cur.execute(update_filePermission_sql)
+        conn.commit()
+    except(Exception) as error:
+        print("Error while updating the database for rename"+error)
+
+def fetchMessagesfromKey(msg_key):
+    fire_wall = False 
+    conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+    cur = conn.cursor()
+    if(fire_wall):
+        #Use parameterized Query
+        param_sql = "SELECT message from \"public\".\"msgTable\"  WHERE MESSAGE_KEY = %s" 
+        cur.execute(param_sql,[msg_key])
+        results = cur.fetchall()
+        total_msgs = []
+        for result_msg in results:
+            total_msgs.append(result_msg[0])
+        return total_msgs
+    else:
+        #conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        #cur = conn.cursor()
+        select_sql = "SELECT message from \"public\".\"msgTable\"  WHERE MESSAGE_KEY = " + "\'" + msg_key + "\'" 
+        print("Select sql is"+select_sql)
+        cur.execute(select_sql)
+        results = cur.fetchall()
+        total_msgs = []
+        for result_msg in results:
+            total_msgs.append(result_msg[0])
+        
+        return total_msgs
+
+def checkifFireWallisOn():
+    pass

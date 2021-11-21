@@ -26,3 +26,9 @@ class ModifyPermissionForm(forms.Form):
     access_level = forms.ChoiceField(widget=forms.RadioSelect, choices=CHOICES_lvl)
     
 
+class renameForm(forms.Form):
+    new_name = forms.CharField(max_length=300)
+
+class messageForm(forms.Form):
+    msg_key = forms.CharField(max_length=300)
+

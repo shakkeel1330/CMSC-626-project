@@ -2,7 +2,7 @@
 <!--{{files}}-->
 <html>
 
-<body style="background : url('/static/img/deathNote.gif')">
+<body style="background : url('/static/img/lockopen.gif')">
     {% load static %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -16,6 +16,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        <div>
+            <a href="{% url 'clickhomebtn' %}" class="btn btn-success" style="float:left; ">Home</a>
+            <a href="{% url 'goBack' %}" class="btn btn-success" style="float:left; ">Back</a>
+            <a href ="{% url 'getMessages' %}" class ="btn btn-success" style ="float:right">getMessages</a>
+            <br><br>
+        </div>
+        <div>
+            <p class="breadcrumb">{{curr_dir}}</p>
+        </div>
     <div>
         <!--<h6 style="color: green; text-align: center;">--Directories--</h6>-->
         <h3 style="color:coral; background-color: darkblue;" class="breadcrumb">--Directories--</h3>
@@ -34,6 +43,8 @@
                 style="float:right; display: inline;">Delete</a>
             <a href="{% url 'modifyPermission' dir.name %}" class="btn btn-danger"
                 style="float:right; display: inline;">Modify permission</a>
+                <a href="{% url 'renameOperation' dir.name %}" class="btn btn-danger"
+                style="float:right; display: inline;">Rename</a>
             {% endif %}
         </div>
         </br>
@@ -56,6 +67,8 @@
                 style="float:right; display: inline;">Delete</a>
             <a href="{% url 'modifyPermission' file.name %}" class="btn btn-danger"
                 style="float:right; display: inline;">Modify permission</a>
+                <a href="{% url 'renameOperation' file.name %}" class="btn btn-danger"
+                style="float:right; display: inline;">Rename</a>
             {% endif %}
         </div>
         </br>

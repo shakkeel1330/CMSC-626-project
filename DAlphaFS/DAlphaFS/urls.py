@@ -30,5 +30,9 @@ urlpatterns = [
     path('', include('accounts.urls')),
 	# path('logout/', views.logoutUser, name="logout"),
     path('createFile',views.createFile,name="createFile"),
-    path('modifyPermission<path:file_name>',views.modifyPermission,name="modifyPermission")
+    path('modifyPermission<path:file_name>',views.modifyPermission,name="modifyPermission"),
+    path('renameOperation<path:file_or_dir_name>',views.renameOperation,name="renameOperation"),
+    path('clickhomebtn',views.clickhomebtn,name="clickhomebtn"),
+    path('goBack',views.goBack,name="goBack"),
+    path('getMessages',views.getMessages,name="getMessages")
 ]
