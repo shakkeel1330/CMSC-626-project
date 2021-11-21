@@ -2,8 +2,9 @@
 from .utils import *
 from .forms import *
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
-shared_ref_dir = 'C:\\Users\\jeffe\\Projects\\test-dir'
+shared_ref_dir = 'C:\\Users\\shakk\\Desktop\\test_dir'
 path_ref = '\\'
 
 def gotoHomePage(request):
@@ -12,10 +13,11 @@ def gotoHomePage(request):
     return render(request, template_name='shared_dir.html',
                   context = {'dirs': dirs, 'files': files})
 
+@login_required(login_url='login')
 def shared_dir(request):
     print(get_client_ip(request))
     global shared_ref_dir
-    shared_ref_dir = 'C:\\Users\\jeffe\\Projects\\test-dir'
+    shared_ref_dir = 'C:\\Users\\shakk\\Desktop\\test_dir'
     dirs,files = get_content(shared_ref_dir,True,True,True,True)
     return render(request, template_name='shared_dir.html',
                   context = {'dirs': dirs, 'files': files})

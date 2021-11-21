@@ -1,0 +1,11 @@
+<h3>Register</h3>
+
+<form method="POST" action="">
+    {% csrf_token %} <!--Remove to make unsecure? -->
+    {{form.as_p}}
+    <input type="submit" name="Create User">
+    {{form.errors}}
+    <div>
+        Already have an account? <a href="{% url 'login' %}">login</a>
+    </div>
+</form>
