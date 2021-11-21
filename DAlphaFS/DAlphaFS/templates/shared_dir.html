@@ -1,44 +1,59 @@
 <!--{{dirs}}-->
 <!--{{files}}-->
 <html>
+
 <body style="background : url('/static/img/deathNote.gif')">
-{% load static %}
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<div>
-<!--<h6 style="color: green; text-align: center;">--Directories--</h6>-->
-<h3  style="color:coral; background-color: darkblue;" class="breadcrumb">--Directories--</h3>
-<a href="{% url 'make_dir'  %}" class="btn btn-success" style="float:right; display: inline;">Create new Folder</a>
-</div>
-<br><br>
-<div id="Directories">
-{%for dir in dirs %}
-<div>
-    
-    <a href="{% url 'dir_traversal' dir %}" class= "btn btn-primary" style="display: inline;">{{dir}}</a>    
-    <a href="{% url 'deleteFolder' dir %}"  class ="btn btn-danger" style="float:right; display: inline;">Delete</a>   
-</div>
-</br>
-{% endfor %}
-</div>
-<div id="Filesheading">
-<!--<p style="text-align:center;font-weight: bold;color: green;">--Files--</p>-->
-<h3  style="color:coral; background-color: darkblue;" class="breadcrumb">--Files--</h3>
-<a href="{% url 'uploadFiletoDir'%}" class="btn btn-success" style="float:right; display: inline;">Upload</a>
-<a href="{% url 'createFile'%}" class="btn btn-success" style="float:right; display: inline;">Create new file</a>
-<br><br>
-</div>
-<div id ="Files">
-    {% for file in files %}
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <div>
-    <a href="{% url 'download' file.name%}" class= "btn btn-primary" style="display: inline;">{{file.name}}</a>    
-    <a href="{% url 'deleteFile' file.name %}"  class ="btn btn-danger" style="float:right; display: inline;">Delete</a>   
-</div>
-</br>
-    {% endfor %}
-</div>
+        <!--<h6 style="color: green; text-align: center;">--Directories--</h6>-->
+        <h3 style="color:coral; background-color: darkblue;" class="breadcrumb">--Directories--</h3>
+        <a href="{% url 'make_dir'  %}" class="btn btn-success" style="float:right; display: inline;">Create new
+            Folder</a>
+    </div>
+    <br><br>
+    <div id="Directories">
+        {%for dir in dirs %}
+        <div>
+
+            <a href="{% url 'dir_traversal' dir %}" class="btn btn-primary" style="display: inline;">{{dir}}</a>
+            <a href="{% url 'deleteFolder' dir %}" class="btn btn-danger"
+                style="float:right; display: inline;">Delete</a>
+        </div>
+        </br>
+        {% endfor %}
+    </div>
+    <div id="Filesheading">
+        <!--<p style="text-align:center;font-weight: bold;color: green;">--Files--</p>-->
+        <h3 style="color:coral; background-color: darkblue;" class="breadcrumb">--Files--</h3>
+        <a href="{% url 'uploadFiletoDir'%}" class="btn btn-success" style="float:right; display: inline;">Upload</a>
+        <br><br>
+    </div>
+    <div id="Files">
+        {% for file in files %}
+        <div>
+            <a href="{% url 'download' file.name%}" class="btn btn-primary" style="display: inline;">{{file.name}}</a>
+            <a href="{% url 'deleteFile' file.name %}" class="btn btn-danger"
+                style="float:right; display: inline;">Delete</a>
+        </div>
+        </br>
+        {% endfor %}
+    </div>
+    <div>
+        <h3 style="float: right; color:coral; background-color: darkblue;"><a href="{% url 'logout' %}">Logout</a>
+        </h3>
+    </div>
 </body>
+
 </html>

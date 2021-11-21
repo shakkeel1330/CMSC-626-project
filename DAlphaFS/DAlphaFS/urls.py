@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 #from .views import shared_dir
 from . import views 
 
@@ -27,5 +27,7 @@ urlpatterns = [
     path('download<path:file_to_download>',views.download,name="download"),
     path('deleteFolder<path:folder_name>',views.deleteFolder,name="deleteFolder"),
     path('make_dir',views.make_dir,name="make_dir"),
+    path('', include('accounts.urls')),
+	# path('logout/', views.logoutUser, name="logout"),
     path('createFile',views.createFile,name="createFile")
 ]

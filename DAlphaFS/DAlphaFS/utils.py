@@ -116,6 +116,7 @@ def encryptFileusingKey(filepath,key):
 
 def runQuery(sql):
     try:
+        print('connecting db')
         conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
         cur = conn.cursor()
         #print('PostgreSQL database version:')
