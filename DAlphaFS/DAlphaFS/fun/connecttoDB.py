@@ -65,10 +65,12 @@ Username    fileName    Access
 
 Delete file - Delete Query -- COMPLETED
 Permissions 
--- Table creation
+-- Table creation -- COMPLETED
 -- Public/Private toggle
 -- List files visibility
 -- Delete button visibility 
+-- Home button
+-- Back button
 
 Password Jacking Attack - Shakeel
 

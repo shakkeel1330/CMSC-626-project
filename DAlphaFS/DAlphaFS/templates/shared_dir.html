@@ -27,9 +27,14 @@
         {%for dir in dirs %}
         <div>
 
-            <a href="{% url 'dir_traversal' dir %}" class="btn btn-primary" style="display: inline;">{{dir}}</a>
+            <a href="{% url 'dir_traversal' dir.name %}" class="btn btn-primary"
+                style="display: inline;">{{dir.name}}</a>
+            {% if dir.del_visibility > 0 %}
             <a href="{% url 'deleteFolder' dir %}" class="btn btn-danger"
                 style="float:right; display: inline;">Delete</a>
+            <a href="{% url 'modifyPermission' dir.name %}" class="btn btn-danger"
+                style="float:right; display: inline;">Modify permission</a>
+            {% endif %}
         </div>
         </br>
         {% endfor %}
@@ -37,15 +42,21 @@
     <div id="Filesheading">
         <!--<p style="text-align:center;font-weight: bold;color: green;">--Files--</p>-->
         <h3 style="color:coral; background-color: darkblue;" class="breadcrumb">--Files--</h3>
-        <a href="{% url 'uploadFiletoDir'%}" class="btn btn-success" style="float:right; display: inline;">Upload</a>
+        <a href="{% url 'uploadFiletoDir' %}" class="btn btn-success" style="float:right; display: inline;">Upload</a>
+        <a href="{% url 'createFile' %}" class="btn btn-success" style="float:right; display: inline;">Create new
+            file</a>
         <br><br>
     </div>
     <div id="Files">
         {% for file in files %}
         <div>
             <a href="{% url 'download' file.name%}" class="btn btn-primary" style="display: inline;">{{file.name}}</a>
+            {% if file.del_visibility > 0 %}
             <a href="{% url 'deleteFile' file.name %}" class="btn btn-danger"
                 style="float:right; display: inline;">Delete</a>
+            <a href="{% url 'modifyPermission' file.name %}" class="btn btn-danger"
+                style="float:right; display: inline;">Modify permission</a>
+            {% endif %}
         </div>
         </br>
         {% endfor %}

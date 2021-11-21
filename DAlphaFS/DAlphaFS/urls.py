@@ -29,5 +29,6 @@ urlpatterns = [
     path('make_dir',views.make_dir,name="make_dir"),
     path('', include('accounts.urls')),
 	# path('logout/', views.logoutUser, name="logout"),
-    path('createFile',views.createFile,name="createFile")
+    path('createFile',views.createFile,name="createFile"),
+    path('modifyPermission<path:file_name>',views.modifyPermission,name="modifyPermission")
 ]
