@@ -27,6 +27,7 @@ urlpatterns = [
     path('download<path:file_to_download>',views.download,name="download"),
     path('deleteFolder<path:folder_name>',views.deleteFolder,name="deleteFolder"),
     path('make_dir',views.make_dir,name="make_dir"),
-    path('', include('accounts.urls'))
+    path('', include('accounts.urls')),
 	# path('logout/', views.logoutUser, name="logout"),
+    path('createFile',views.createFile,name="createFile")
 ]

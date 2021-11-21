@@ -3,6 +3,7 @@ from .utils import *
 from .forms import *
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 
 shared_ref_dir = 'C:\\Users\\shakk\\Desktop\\test_dir'
 path_ref = '\\'
@@ -22,13 +23,15 @@ def shared_dir(request):
     return render(request, template_name='shared_dir.html',
                   context = {'dirs': dirs, 'files': files})
 
+@login_required(login_url='login')
 def dir_traversal(request,dir):
     global shared_ref_dir
     shared_ref_dir = shared_ref_dir + path_ref + dir
     dirs,files = get_content(shared_ref_dir,True,True,True,True)
     return render(request, template_name='shared_dir.html',
                   context = {'dirs': dirs, 'files': files})
-    
+
+@login_required(login_url='login') 
 def deleteFile(request,file_name):
     global shared_ref_dir
     file_ref_dir = shared_ref_dir + path_ref + file_name
@@ -37,6 +40,7 @@ def deleteFile(request,file_name):
     return render(request, template_name='shared_dir.html',
                   context = {'dirs': dirs, 'files': files})
 
+@login_required(login_url='login')
 def uploadFiletoDir(request):
     global shared_ref_dir
     form = UploadFileForm(request.POST, request.FILES)
@@ -47,17 +51,37 @@ def uploadFiletoDir(request):
             return gotoHomePage(request)
     return render(request,'upload.html',{'form':form})   
 
+@login_required(login_url='login')
 def download(request,file_to_download):
     global shared_ref_dir
     file_address = shared_ref_dir + path_ref + file_to_download
     return send_file(file_address)    
 
+@login_required(login_url='login')
 def deleteFolder(request,folder_name):
     global shared_ref_dir
     dir_ref_dir = shared_ref_dir + path_ref + folder_name
     util_delete_Folder(dir_ref_dir)
     return gotoHomePage(request)
 
+@login_required(login_url='login')
+def createFile(request):
+    global shared_ref_dir
+    try:
+        if (request.method =="POST"):
+            print("POST METHOD INVOKED")
+            form = MakeFileForm(request.POST)
+            if form.is_valid():
+                handle_make_file('{}{}'.format(shared_ref_dir+path_ref, form.data['name']), form.data['content'])
+                encryptFile(shared_ref_dir+path_ref+form.data['name'])
+                return gotoHomePage(request)
+        else:
+            form = MakeFileForm()
+            return render(request,'make_file.html',{'form':form})
+    except:
+        pass
+
+@login_required(login_url='login')
 def make_dir(request):
     global shared_ref_dir
     form = MakeDirForm(request.POST)
