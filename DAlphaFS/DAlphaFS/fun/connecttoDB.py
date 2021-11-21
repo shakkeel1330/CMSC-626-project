@@ -2,7 +2,7 @@ import psycopg2 as pgad
 try:
     conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
     cur = conn.cursor()
-    print('PostgreSQL database version:')
+    #print('PostgreSQL database version:')
     #cur.execute('SELECT * FROM \"fileSystem\".\"encryptionKeys\"')
     #cur.execute('SELECT table_name, column_name, data_type FROM information_schema.columns WHERE table_name = \'encryptionKeys\';')
     #cur.execute('INSERT INTO \"fileSystem\".\"encryptionKeys\"(fileName,encrypt_key) VALUES(abc,def)')
@@ -32,7 +32,28 @@ Shakeel           Admin
 """
 
 """
-fileName    encrypt_key     user_name
+fileName    encrypt_key     user_name   delete?
+
+
+"""
+
+
+"""
+Delete:
+Superuser - Admin - can delete public file/
+Normal - Non-admin
+Private files - private user can delete only.
+Public file - Superuser(any),private user can delete.
+
+View:
+Public/Private
+
+Write:
+Public/Private
+
+Read:
+Public 
+Private - private user can only.
 
 
 """

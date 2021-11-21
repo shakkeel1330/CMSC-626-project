@@ -48,19 +48,31 @@ def util_delete_file(file_name):
 
 def handle_uploaded_file(f, address):
     print("Upload address is"+address)
+    
     with open(address, 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
-    encryptFile(address)        
+    encryptFile(address)       
 
 
 # For downloading file.
 def send_file(address):
     filename = address
+    fernet = Fernet(getKeyusingfileName(address).encode())
+    with open(address, 'rb') as enc_file:
+        encrypted = enc_file.read()
+# decrypting the file
+    decrypted = fernet.decrypt(encrypted)
+# opening the file in write mode and
+# writing the decrypted data
+    with open(address, 'wb') as dec_file:
+        dec_file.write(decrypted)
     wrapper = FileWrapper(open(filename, 'rb'))
     response = HttpResponse(wrapper, content_type='application/force-download')
-    response['Content-Disposition'] = 'attachment; filename={}'.format(address.split('/')[-1].replace(' ', '-'))
+    print("Address is"+address)
+    response['Content-Disposition'] = 'attachment; filename={}'.format(address.split('\\')[-1].replace(' ', '-'))
     response['Content-Length'] = getsize(filename)
+    encryptFileusingKey(filename,getKeyusingfileName(address).encode())
     return response
 
 def util_delete_Folder(folder_ref_path):
@@ -77,20 +89,36 @@ def handle_make_dir(address):
 
 def encryptFile(filepath):
     # Fetch input file and encrypt it during upload
+    print("File encryption")
     key = Fernet.generate_key()
     fernet = Fernet(key)
     with open(filepath,'rb') as file:
         original = file.read()
-        encrypted = fernet.encrypt(original)
+    encrypted = fernet.encrypt(original)
+    
+    with open(filepath, 'wb') as encrypted_file:
+        print("Writing encrypted file")
+        encrypted_file.write(encrypted)
     sql="INSERT INTO \"public\".\"encryptionKeys\" VALUES("+"\'"+str(filepath)+"\'"+","+"\'"+key.decode()+"\'"+")"
     runQuery(sql)
+
+def encryptFileusingKey(filepath,key):
+    fernet = Fernet(key)
+    with open(filepath,'rb') as file:
+        original = file.read()
+    encrypted = fernet.encrypt(original)
+    
+    with open(filepath, 'wb') as encrypted_file:
+        print("Writing encrypted file")
+        encrypted_file.write(encrypted)
+
 
 def runQuery(sql):
     try:
         conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
         cur = conn.cursor()
-        print('PostgreSQL database version:')
-        print("SQL is"+sql)
+        #print('PostgreSQL database version:')
+        #print("SQL is"+sql)
         cur.execute(sql)
         conn.commit()
         # display the PostgreSQL database server version
@@ -105,3 +133,29 @@ def runQuery(sql):
         if conn is not None:
             conn.close()
             print('Database connection closed.')
+
+def getKeyusingfileName(filepath):
+    try:
+        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        cur = conn.cursor()
+        print(filepath)
+        sql ="SELECT encrypt_key from \"public\".\"encryptionKeys\" WHERE \"fileName\"=" +"\'"+ str(filepath) +"\'"
+        cur.execute(sql)
+        key = cur.fetchone()
+        print(key[0])
+        #print("Key"+key)
+        return key[0]
+    except (Exception, pgad.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+            print('Database connection closed.')
+
+def handle_make_file(address, content):
+    try:
+        print("Making file")
+        with open(address, 'w+') as file:
+            file.write(content)
+    except:
+        pass

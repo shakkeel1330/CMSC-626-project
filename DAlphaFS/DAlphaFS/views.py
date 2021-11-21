@@ -2,6 +2,7 @@
 from .utils import *
 from .forms import *
 from django.shortcuts import render
+from django.urls import reverse
 
 shared_ref_dir = 'C:\\Users\\jeffe\\Projects\\test-dir'
 path_ref = '\\'
@@ -55,6 +56,22 @@ def deleteFolder(request,folder_name):
     dir_ref_dir = shared_ref_dir + path_ref + folder_name
     util_delete_Folder(dir_ref_dir)
     return gotoHomePage(request)
+
+def createFile(request):
+    global shared_ref_dir
+    try:
+        if (request.method =="POST"):
+            print("POST METHOD INVOKED")
+            form = MakeFileForm(request.POST)
+            if form.is_valid():
+                handle_make_file('{}{}'.format(shared_ref_dir+path_ref, form.data['name']), form.data['content'])
+                encryptFile(shared_ref_dir+path_ref+form.data['name'])
+                return gotoHomePage(request)
+        else:
+            form = MakeFileForm()
+            return render(request,'make_file.html',{'form':form})
+    except:
+        pass
 
 def make_dir(request):
     global shared_ref_dir

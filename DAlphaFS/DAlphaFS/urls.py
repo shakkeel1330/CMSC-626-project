@@ -26,5 +26,6 @@ urlpatterns = [
     path('uploadFiletoDir',views.uploadFiletoDir,name="uploadFiletoDir"),
     path('download<path:file_to_download>',views.download,name="download"),
     path('deleteFolder<path:folder_name>',views.deleteFolder,name="deleteFolder"),
-    path('make_dir',views.make_dir,name="make_dir")
+    path('make_dir',views.make_dir,name="make_dir"),
+    path('createFile',views.createFile,name="createFile")
 ]
