@@ -70,6 +70,15 @@ def handle_uploaded_file(f, address,access_level,user_name):
     writePermission(address,user_name,access_level,'File')
     encryptFile(address)       
 
+# Check if file already exists. If yes, creates an entry in the uploadTable
+def fileversionupdate(file_path,updated_user):
+    try:
+        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        cur = conn.cursor()
+        sql="SELECT "
+    
+    except(Exception) as error:
+        print(error)
 
 # For downloading file.
 def send_file(address):
@@ -310,12 +319,18 @@ def fetchMessagesfromKey(msg_key):
         select_sql = "SELECT message from \"public\".\"msgTable\"  WHERE MESSAGE_KEY = " + "\'" + msg_key + "\'" 
         print("Select sql is"+select_sql)
         cur.execute(select_sql)
-        results = cur.fetchall()
+        conn.commit()
         total_msgs = []
-        for result_msg in results:
-            total_msgs.append(result_msg[0])
-        
+        try:
+            results = cur.fetchall()
+            
+            for result_msg in results:
+                total_msgs.append(result_msg[0])
+        except:
+            return []
         return total_msgs
 
 def checkifFireWallisOn():
     pass
+
+

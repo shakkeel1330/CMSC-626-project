@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.http import HttpResponseRedirect,HttpResponse
 
+
 shared_ref_dir = 'C:\\Users\\jeffe\\Projects\\test-dir'
 path_ref = '\\'
 perm_home='C:\\Users\\jeffe\\Projects\\test-dir'
