@@ -7,15 +7,21 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect,HttpResponse
 
 
+shared_ref_map = {}
 shared_ref_dir = 'C:\\Users\\jeffe\\Projects\\test-dir'
 path_ref = '\\'
 perm_home='C:\\Users\\jeffe\\Projects\\test-dir'
 
 def gotoHomePage(request):
     global shared_ref_dir
-    dirs,files = get_content(shared_ref_dir,True,True,True,True,str(request.user))
-    curr_dir = shared_ref_dir
+    global shared_ref_map
+    global perm_home
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
+    dirs,files = get_content(shared_ref_map_dir,True,True,str(request.user))
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
+    curr_dir = getdecipheredcurraddress(shared_ref_map_dir,perm_home)
     #print("Current directory is"+curr_dir)
+    shared_ref_map[str(request.user)] = shared_ref_map_dir
     return render(request, template_name='shared_dir.html',
                   context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir})
 
@@ -23,36 +29,61 @@ def gotoHomePage(request):
 def shared_dir(request):
     print(get_client_ip(request))
     global shared_ref_dir
+    global shared_ref_map
+    global perm_home
     #shared_ref_dir = 'C:\\Users\\shakk\\Desktop\\test_dir'
-    shared_ref_dir = 'C:\\Users\\jeffe\\Projects\\test-dir'
-    curr_dir = shared_ref_dir
-    dirs,files = get_content(shared_ref_dir,True,True,True,True,str(request.user))
+    #shared_ref_dir = 'C:\\Users\\jeffe\\Projects\\test-dir'
+    
+    shared_ref_map[str(request.user)] = 'C:\\Users\\jeffe\\Projects\\test-dir'
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
+    #original_dir = shared_ref_map_dir
+    curr_dir = getdecipheredcurraddress(shared_ref_map_dir,perm_home)
+    dirs,files = get_content(shared_ref_map_dir,True,True,str(request.user))
+    shared_ref_map[str(request.user)] = shared_ref_map_dir
     return render(request, template_name='shared_dir.html',
                   context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir})
 
 @login_required(login_url='login')
 def dir_traversal(request,dir):
     global shared_ref_dir
-    shared_ref_dir = shared_ref_dir + path_ref + dir
-    dirs,files = get_content(shared_ref_dir,True,True,True,True,str(request.user))
-    curr_dir = shared_ref_dir
+    global shared_ref_map
+    global perm_home
+    #shared_ref_dir = shared_ref_dir + path_ref + dir
+    #original_dir = shared_ref_map_dir
+    shared_ref_map_dir = shared_ref_map[str(request.user)] + path_ref + caesar(dir,3)
+    #curr_dir = shared_ref_map[str(request.user)] + path_ref + dir
+    curr_dir = getdecipheredcurraddress(shared_ref_map_dir,perm_home)
+    shared_ref_map[str(request.user)] = shared_ref_map_dir
+    print("Directory to traverse is"+dir+"shared path is"+shared_ref_map_dir)
+    dirs,files = get_content(shared_ref_map_dir,True,True,str(request.user))
+    #curr_dir = shared_ref_dir
+    
+    shared_ref_map[str(request.user)] = shared_ref_map_dir
     return render(request, template_name='shared_dir.html',
                   context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir})
 
 @login_required(login_url='login') 
 def deleteFile(request,file_name):
     global shared_ref_dir
-    file_ref_dir = shared_ref_dir + path_ref + file_name
+    global shared_ref_map
+    global perm_home
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
+    file_name = caesar(file_name,3)
+    #file_ref_dir = shared_ref_dir + path_ref + file_name
+    file_ref_dir = shared_ref_map_dir + path_ref + file_name
     util_delete_file(file_ref_dir)
-    curr_dir = shared_ref_dir
-    dirs,files = get_content(shared_ref_dir,True,True,True,True,str(request.user))
+    curr_dir = getdecipheredcurraddress(shared_ref_map_dir,perm_home)
+    dirs,files = get_content(shared_ref_map_dir,True,True,str(request.user))
+    shared_ref_map[str(request.user)] = shared_ref_map_dir
     return render(request, template_name='shared_dir.html',
                   context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir})
 
 @login_required(login_url='login')
 def uploadFiletoDir(request):
     global shared_ref_dir
+    global shared_ref_map
     form = UploadFileForm(request.POST, request.FILES)
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
@@ -61,28 +92,81 @@ def uploadFiletoDir(request):
             if(form.data['access_level']=='2'):
                 access_level = 'Private'
             #print("Upload user" +str(request.user))
-            handle_uploaded_file(request.FILES['file'], '{}{}'.format(shared_ref_dir+path_ref, request.FILES['file'].name),access_level,str(request.user))
+            handle_uploaded_file(request.FILES['file'], '{}{}'.format(shared_ref_map_dir+path_ref, request.FILES['file'].name),access_level,str(request.user))
+            shared_ref_map[str(request.user)] = shared_ref_map_dir
             return gotoHomePage(request)
         
-
+    shared_ref_map[str(request.user)] = shared_ref_map_dir
     return render(request,'upload.html',{'form':form})   
 
 @login_required(login_url='login')
 def download(request,file_to_download):
     global shared_ref_dir
-    file_address = shared_ref_dir + path_ref + file_to_download
-    return send_file(file_address)    
+    global shared_ref_map
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
+    file_address = shared_ref_map_dir + path_ref + file_to_download
+    shared_ref_map[str(request.user)] = shared_ref_map_dir
+    return send_file(file_address,str(request.user))    
 
 @login_required(login_url='login')
 def deleteFolder(request,folder_name):
     global shared_ref_dir
-    dir_ref_dir = shared_ref_dir + path_ref + folder_name
+    global shared_ref_map
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
+    dir_ref_dir = shared_ref_map_dir + path_ref + folder_name
     util_delete_Folder(dir_ref_dir)
+    shared_ref_map[str(request.user)] = shared_ref_map_dir
     return gotoHomePage(request)
 
 @login_required(login_url='login')
+def editFile(request,file_name):
+    global shared_ref_dir
+    global shared_ref_map
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
+    path_ref ="\\"
+    try:
+        if(request.method=="POST"):
+            form = editFileForm(request.POST)
+            if form.is_valid():
+                content = form.data['content']
+                handle_save_file(content,shared_ref_map_dir+path_ref+file_name,str(request.user))
+                shared_ref_map[str(request.user)] = shared_ref_map_dir
+                form.clean()
+                return gotoHomePage(request)   
+            else:
+                handle_edit_file(shared_ref_map_dir+path_ref+file_name,str(request.user))
+                form = editFileForm()
+                shared_ref_map[str(request.user)] = shared_ref_map_dir   
+                lines=""
+                with open('C:\\Users\jeffe\\Projects\\ComputerSecurity\\CMSC-626-project\\DAlphaFS\\DAlphaFS\\readme.txt') as f:
+                    lines = f.read()
+                print("Lines in else-1"+lines)
+                form.data['content'] = lines
+                return render(request,'editFile.html',{'form':form}) 
+        else:
+            handle_edit_file(shared_ref_map_dir+path_ref+file_name,str(request.user))
+            
+            lines=""
+            with open('C:\\Users\jeffe\\Projects\\ComputerSecurity\\CMSC-626-project\\DAlphaFS\\DAlphaFS\\readme.txt') as f:
+                lines = f.read()
+            print("Lines in else"+lines)
+            form = editFileForm(initial={'content': lines})
+            #form.data['content'] = lines
+            shared_ref_map[str(request.user)] = shared_ref_map_dir  
+            return render(request,'editFile.html',{'form':form}) 
+    except(Exception) as error:
+        print("Exception while editing file is"+str(error))
+    
+
+    
+@login_required(login_url='login')
 def createFile(request):
     global shared_ref_dir
+    global shared_ref_map
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
+    path_ref ="\\"
+    #print("Pre forms call")
+    #file_value('tempting')
     try:
         if (request.method =="POST"):
             print("POST METHOD INVOKED")
@@ -92,15 +176,23 @@ def createFile(request):
                 access_level = 'Public'
                 if(form.data['access_level'] == '2'):
                     access_level = 'Private'
-                
-                handle_make_file('{}{}'.format(shared_ref_dir+path_ref, form.data['name']), form.data['content'],user_name,access_level)
-                encryptFile(shared_ref_dir+path_ref+form.data['name'])
+                print("Pre create file")
+                handle_make_file('{}{}'.format(shared_ref_map_dir+path_ref, form.data['name']), form.data['content'],user_name,access_level)
+                print("Post create file")
+                encryptFile(getcipheredaddress(str(shared_ref_map_dir)+str(path_ref)+str(form.data['name']))) 
+                # Creating file/dir with same name will add _d
+                #encryptFile(address)
+                print("Post Encrypt file")
+                shared_ref_map[str(request.user)] = shared_ref_map_dir
                 return gotoHomePage(request)
             else:
-                form = MakeFileForm()    
+                form = MakeFileForm() 
+                shared_ref_map[str(request.user)] = shared_ref_map_dir   
                 return render(request,'make_file.html',{'form':form})
         else:
             form = MakeFileForm()
+            
+            shared_ref_map[str(request.user)] = shared_ref_map_dir
             return render(request,'make_file.html',{'form':form})
     except Exception as e:
         print(e)
@@ -108,6 +200,8 @@ def createFile(request):
 @login_required(login_url='login')
 def make_dir(request):
     global shared_ref_dir
+    global shared_ref_map
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
     form = MakeDirForm(request.POST)
     if request.method == 'POST':
         form = MakeDirForm(request.POST)
@@ -116,8 +210,10 @@ def make_dir(request):
             access_level = 'Public'
             if(form.data['access_level'] == '2'):
                 access_level='Private'
-            handle_make_dir('{}{}'.format(shared_ref_dir+path_ref, form.data['name']),user_name,access_level)
+            handle_make_dir('{}{}'.format(shared_ref_map_dir+path_ref, form.data['name']),user_name,access_level)
+            shared_ref_map[str(request.user)] = shared_ref_map_dir
             return gotoHomePage(request)
+    shared_ref_map[str(request.user)] = shared_ref_map_dir
     return render(request, 'make_dir.html', {'form': form})
 
 def get_client_ip(request):
@@ -131,8 +227,10 @@ def get_client_ip(request):
 
 def modifyPermission(request,file_name):
     global shared_ref_dir
+    global shared_ref_map
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
     form = ModifyPermissionForm(request.POST)
-    file_path = shared_ref_dir + path_ref + file_name
+    file_path = shared_ref_map_dir + path_ref + file_name
     if request.method == 'POST':
         form = ModifyPermissionForm(request.POST)
         if form.is_valid():
@@ -140,23 +238,30 @@ def modifyPermission(request,file_name):
             access_level = 'Public'
             if(form.data['access_level'] == '2'):
                 access_level = 'Private'
-            modifyPermissionindB(file_path,access_level)
+            modifyPermissionindB(getcipheredaddress(file_path),access_level)
+            shared_ref_map[str(request.user)] = shared_ref_map_dir
             return gotoHomePage(request)
+    shared_ref_map[str(request.user)] = shared_ref_map_dir
     return render(request,'modifyPermission.html',{'form':form,'file_path':file_path})
 
 
 def renameOperation(request,file_or_dir_name):
     global shared_ref_dir
+    global shared_ref_map
+    global perm_home
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
     form = renameForm(request.POST)
-    curr_dir = shared_ref_dir
-    file_path = shared_ref_dir + path_ref + file_or_dir_name
+    curr_dir = getdecipheredcurraddress(shared_ref_map_dir,perm_home)
+    file_path = shared_ref_map_dir + path_ref + file_or_dir_name
     if request.method =='POST':
         form = renameForm(request.POST)
         if form.is_valid():
             new_file_name = form.data['new_name']
-            new_file_path = curr_dir + path_ref + new_file_name
+            new_file_path = shared_ref_map_dir + path_ref + new_file_name
             renamefunc(file_path,new_file_path)
+            shared_ref_map[str(request.user)] = shared_ref_map_dir
             return gotoHomePage(request)
+    shared_ref_map[str(request.user)] = shared_ref_map_dir
     return render(request,'renameFile.html',{'form':form,'file_path':file_path})
 
 def clickhomebtn(request):
@@ -167,18 +272,22 @@ def clickhomebtn(request):
 @login_required(login_url='login')
 def goBack(request):
     global shared_ref_dir
-    if(shared_ref_dir == perm_home):
+    global shared_ref_map
+    global perm_home
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
+    if(shared_ref_map_dir == perm_home):
         return HttpResponseRedirect(reverse('shared_dir'))
     else:
-        last_path_ref_index = shared_ref_dir[::-1].index(path_ref)
-        print("last_path_ref_index"+str(last_path_ref_index))
-        print("shared_ref_dir"+shared_ref_dir)
+        last_path_ref_index = shared_ref_map_dir[::-1].index(path_ref)
+        #print("last_path_ref_index"+str(last_path_ref_index))
+        #print("shared_ref_dir"+shared_ref_dir)
         
-        prev_dir = shared_ref_dir[:len(shared_ref_dir)-last_path_ref_index-1]
+        prev_dir = shared_ref_map_dir[:len(shared_ref_map_dir)-last_path_ref_index-1]
         print("Prev dir"+str(prev_dir))
-        dirs,files = get_content(prev_dir,True,True,True,True,str(request.user))
-        curr_dir = prev_dir
-        shared_ref_dir = prev_dir
+        dirs,files = get_content(prev_dir,True,True,str(request.user))
+        curr_dir = getdecipheredcurraddress(prev_dir,perm_home)
+        shared_ref_map_dir = prev_dir
+        shared_ref_map[str(request.user)] = shared_ref_map_dir
         return render(request, template_name='shared_dir.html',
                   context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir})
 

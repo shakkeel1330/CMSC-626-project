@@ -1,0 +1,18 @@
+{% block title %}Saving File{% endblock %}
+{% block body %}
+<div class="container">
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <form name="editFile" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </form>
+        </div>
+        <button style="border-top-left-radius: 0; border-top-right-radius: 0"
+            class="btn btn-primary btn-block text-center" type="submit" onclick="editFile.submit()">
+            Save
+        </button>
+    </div>
+</div>
+{% endblock %}

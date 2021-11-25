@@ -34,5 +34,6 @@ urlpatterns = [
     path('renameOperation<path:file_or_dir_name>',views.renameOperation,name="renameOperation"),
     path('clickhomebtn',views.clickhomebtn,name="clickhomebtn"),
     path('goBack',views.goBack,name="goBack"),
-    path('getMessages',views.getMessages,name="getMessages")
+    path('getMessages',views.getMessages,name="getMessages"),
+    path('editFile<path:file_name>',views.editFile,name="editFile")
 ]

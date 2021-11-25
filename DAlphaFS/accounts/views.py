@@ -64,7 +64,7 @@ def logoutUser(request):
 
 def checkifLimitExceeded(username,loginTime):
     single_quote ="\'"
-    select_sql = "SELECT COUNT(*) FROM \"public\".\"loginaddress\" WHERE \"loginaddress\".\"username\"="+single_quote+username+single_quote +" AND \"loginaddress\".\"loginTime\"=" + single_quote + loginTime + single_quote
+    select_sql = "SELECT COUNT(*) FROM \"public\".\"loginaddress\" WHERE \"loginaddress\".\"username\"="+single_quote+username+single_quote +" AND \"loginaddress\".\"loginTime\" like" + single_quote + "%"+loginTime + "%"+single_quote
     try:
         conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
         cur = conn.cursor()
@@ -81,7 +81,8 @@ def checkifLimitExceeded(username,loginTime):
 
 def insertfailedlogin(username,ipAddress,loginTime,login_info):
     single_quote = "\'"
-    insert_sql="INSERT INTO \"public\".\"loginaddress\" VALUES(" +single_quote + username + single_quote +","+single_quote + ipAddress + single_quote +"," + single_quote + loginTime + single_quote +","+single_quote+login_info+single_quote+")"
+    current_time=datetime.today().strftime('%Y-%m-%d-%H:%M:%S')
+    insert_sql="INSERT INTO \"public\".\"loginaddress\" VALUES(" +single_quote + username + single_quote +","+single_quote + ipAddress + single_quote +"," + single_quote + current_time + single_quote +","+single_quote+login_info+single_quote+")"
     try:
         conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
         cur = conn.cursor()

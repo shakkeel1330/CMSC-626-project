@@ -19,7 +19,7 @@
         <div>
             <a href="{% url 'clickhomebtn' %}" name = "Homebtn" class="btn btn-success" style="float:left; ">Home</a>
             <a href="{% url 'goBack' %}" class="btn btn-success" style="float:left; ">Back</a>
-            <a href ="{% url 'getMessages' %}" class ="btn btn-success" style ="float:right">getMessages</a>
+            <a href ="{% url 'getMessages' %}" class ="btn btn-success" style ="float:right">getHistory</a>
             <br><br>
         </div>
         <div>
@@ -69,6 +69,8 @@
                 style="float:right; display: inline;">Modify permission</a>
                 <a href="{% url 'renameOperation' file.name %}" class="btn btn-danger"
                 style="float:right; display: inline;">Rename</a>
+                <a href="{% url 'editFile' file.name %}" class="btn btn-danger"
+                style="float:right; display: inline;">Edit</a>
             {% endif %}
         </div>
         </br>
