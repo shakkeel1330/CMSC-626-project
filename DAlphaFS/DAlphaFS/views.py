@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect,HttpResponse
 
 
 shared_ref_map = {}
-shared_ref_dir = 'C:\\Users\\jeffe\\Projects\\test-dir'
+shared_ref_dir = 'F:\\project\\DAlphaFS'
 path_ref = '\\'
 perm_home= shared_ref_dir
 

@@ -550,7 +550,7 @@ def getdecipheredcurraddress(address,perm_home):
 
 def checkwhethercorrupt(filename,lmtime):
     try:
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         cur = conn.cursor()
         single_quote="\'"
         #sql="select upload_dt from \"public\".\"uploadhistory\" where filename="+single_quote+filename+single_quote+" order by upload_dt desc fetch first row only"
