@@ -1,754 +1,341 @@
 Performing system checks...
 
 Input field for text
-lines arePreston
-form lines areroad.txt
+lines aredangerous.txtoeob
+form lines aredangerous.txtoeob
 System check identified no issues (0 silenced).
-November 26, 2021 - 08:04:57
+November 26, 2021 - 08:22:40
 Django version 3.2.9, using settings 'DAlphaFS.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-file_status_corruptTrue
-ciphered_address isC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-C:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-Key used for decryptionK09-ni645ZDpUo7njAT_qkLYuj3ga5qtvnF7qkILE9Q=
-Decrypted value isb'Preston'
-Lines in elsePreston
-Upload address isC:\Users\jeffe\Projects\test-dir\street.txt
-Content isPrestonCt
-Save checkC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-Key used for encryption is-N7NvSg3Dg5vIfQ1G_kxF0GXzFb_1uOzeMQBYDos0uQ=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\vwuhhw.waw', 'K09-ni645ZDpUo7njAT_qkLYuj3ga5qtvnF7qkILE9Q=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='-N7NvSg3Dg5vIfQ1G_kxF0GXzFb_1uOzeMQBYDos0uQ=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','matthew','C:\Users\jeffe\Projects\test-dir\vwuhhw.waw','2021-11-26-08:05:19')
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-ciphered_address isC:\Users\jeffe\Projects\test-dir\urdg.waw
-C:\Users\jeffe\Projects\test-dir\urdg.waw
-Key used for decryptionBLXDtTw3GA_iUX6tBU54fX20Nertb5h064-EdQco71s=
-Decrypted value isb'Preston'
-Lines in elsePreston
-Upload address isC:\Users\jeffe\Projects\test-dir\road.txt
-Content isPreston
-Save checkC:\Users\jeffe\Projects\test-dir\urdg.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\urdg.waw
-Key used for encryption isy3KaBqrGC0mQ9k1KKBXvvgKJjTbGq7SkAzx_cbpoNBU=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\urdg.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\urdg.waw', 'BLXDtTw3GA_iUX6tBU54fX20Nertb5h064-EdQco71s=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='y3KaBqrGC0mQ9k1KKBXvvgKJjTbGq7SkAzx_cbpoNBU=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\urdg.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','matthew','C:\Users\jeffe\Projects\test-dir\urdg.waw','2021-11-26-08:05:25')
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-ciphered_address isC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-C:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-Key used for decryption-N7NvSg3Dg5vIfQ1G_kxF0GXzFb_1uOzeMQBYDos0uQ=
-Decrypted value isb'PrestonCt'
-Lines in elsePrestonCt
-Upload address isC:\Users\jeffe\Projects\test-dir\street.txt
-Content isPrestonCt
-Save checkC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-Key used for encryption is5EM7TMYkvgeD2foMAgaYJ6OBYXOoRQqv_p071cmyD2Y=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\vwuhhw.waw', '-N7NvSg3Dg5vIfQ1G_kxF0GXzFb_1uOzeMQBYDos0uQ=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='5EM7TMYkvgeD2foMAgaYJ6OBYXOoRQqv_p071cmyD2Y=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','matthew','C:\Users\jeffe\Projects\test-dir\vwuhhw.waw','2021-11-26-08:05:28')
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-ciphered_address isC:\Users\jeffe\Projects\test-dir\urdg.waw
-C:\Users\jeffe\Projects\test-dir\urdg.waw
-Key used for decryptiony3KaBqrGC0mQ9k1KKBXvvgKJjTbGq7SkAzx_cbpoNBU=
-Decrypted value isb'Preston'
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','matthew','C:\Users\jeffe\Projects\test-dir\urdg.waw','2021-11-26-08:05:30')
-METHOD ISGET
-Lines in elsePrestonCt
-Upload address isC:\Users\jeffe\Projects\test-dir\road.txt
-Content isPrestonCt
-Save checkC:\Users\jeffe\Projects\test-dir\urdg.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\urdg.waw
-Key used for encryption isJRsdmok1xwMivHT2r_7CRtdYMyvd8mQFRY6_ZL5qLr4=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\urdg.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\urdg.waw', 'y3KaBqrGC0mQ9k1KKBXvvgKJjTbGq7SkAzx_cbpoNBU=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='JRsdmok1xwMivHT2r_7CRtdYMyvd8mQFRY6_ZL5qLr4=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\urdg.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','matthew','C:\Users\jeffe\Projects\test-dir\urdg.waw','2021-11-26-08:05:32')
-127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-file_status_corruptTrue
-ciphered_address isC:\Users\jeffe\Projects\test-dir\urdg.waw
-C:\Users\jeffe\Projects\test-dir\urdg.waw
-Key used for decryptionJRsdmok1xwMivHT2r_7CRtdYMyvd8mQFRY6_ZL5qLr4=
-Decrypted value isb'PrestonCt'
-Lines in elsePrestonCt
-Upload address isC:\Users\jeffe\Projects\test-dir\road.txt
-Content isPrestonCt
-Save checkC:\Users\jeffe\Projects\test-dir\urdg.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\urdg.waw
-Key used for encryption isH08GX9aAAnEebgBRryM9XxjN_c5lAgcAElb98xquLgw=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\urdg.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\urdg.waw', 'JRsdmok1xwMivHT2r_7CRtdYMyvd8mQFRY6_ZL5qLr4=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='H08GX9aAAnEebgBRryM9XxjN_c5lAgcAElb98xquLgw=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\urdg.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','matthew','C:\Users\jeffe\Projects\test-dir\urdg.waw','2021-11-26-08:05:35')
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Device name isMozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36
-Browser isChrome
-Browser version is96.0.4664
-Os isWindows
-Os version is10
-Is pc:True
-Is mobile:False
-Select SQL isSELECT COUNT(*) FROM "public"."loginaddress" WHERE "loginaddress"."username"='jeffrey' AND "loginaddress"."loginTime" like'%2021-11-26%'
-127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-file_status_corruptTrue
-ciphered_address isC:\Users\jeffe\Projects\test-dir\urdg.waw
-C:\Users\jeffe\Projects\test-dir\urdg.waw
-Key used for decryptionH08GX9aAAnEebgBRryM9XxjN_c5lAgcAElb98xquLgw=
-Decrypted value isb'PrestonCt'
-Lines in elsePrestonCt
-Upload address isC:\Users\jeffe\Projects\test-dir\road.txt
-Content is200
-Save checkC:\Users\jeffe\Projects\test-dir\urdg.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\urdg.waw
-Key used for encryption isBK8SD9hgv9nFT50NccvwKMFcRiG5gCUnun33qozSrJc=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\urdg.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\urdg.waw', 'H08GX9aAAnEebgBRryM9XxjN_c5lAgcAElb98xquLgw=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='BK8SD9hgv9nFT50NccvwKMFcRiG5gCUnun33qozSrJc=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\urdg.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\urdg.waw','2021-11-26-08:07:35')
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-ciphered_address isC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-C:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-Key used for decryption5EM7TMYkvgeD2foMAgaYJ6OBYXOoRQqv_p071cmyD2Y=
-Decrypted value isb'PrestonCt'
-Lines in elsePrestonCt
-Upload address isC:\Users\jeffe\Projects\test-dir\street.txt
-Content isPrestonCt_C
-Save checkC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-Key used for encryption isScBPyBumZoOudcGstzFEkMI0p_tqdmo26Lfs8HCRIoc=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\vwuhhw.waw', '5EM7TMYkvgeD2foMAgaYJ6OBYXOoRQqv_p071cmyD2Y=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='ScBPyBumZoOudcGstzFEkMI0p_tqdmo26Lfs8HCRIoc=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\vwuhhw.waw','2021-11-26-08:07:43')
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-ciphered_address isC:\Users\jeffe\Projects\test-dir\urdg.waw
-C:\Users\jeffe\Projects\test-dir\urdg.waw
-Key used for decryptionBK8SD9hgv9nFT50NccvwKMFcRiG5gCUnun33qozSrJc=
-Decrypted value isb'200'
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','jeffrey','C:\Users\jeffe\Projects\test-dir\urdg.waw','2021-11-26-08:07:46')
-METHOD ISGET
-Lines in elsePrestonCt_C
-Performing system checks...
-
-Input field for text
-lines arePrestonCt_C
-form lines are200
-System check identified no issues (0 silenced).
-November 26, 2021 - 08:09:34
-Django version 3.2.9, using settings 'DAlphaFS.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CTRL-BREAK.
-127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
 Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
 file_status_corruptFalse
 POST METHOD INVOKED
 Pre create file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."filePermission" WHERE "filePermission"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
+Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."filePermission" WHERE "filePermission"."fileName"='C:\Users\jeffe\Projects\test-dir\i6.waw'
 None
 Making file
-New address value isC:\Users\jeffe\Projects\test-dir\eloo.waw
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('CREATE','jeffrey','C:\Users\jeffe\Projects\test-dir\eloo.waw','2021-11-26-08:10:20')
+New address value isC:\Users\jeffe\Projects\test-dir\i6.waw
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('CREATE','jeffrey','C:\Users\jeffe\Projects\test-dir\i6.waw','2021-11-26-08:22:57')
 Post create file
-File encryption for address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for encryption is4R9T4ErN3lAWSbtBQ1ErSoiDKo8mXl-dOvPyS5iItY4=
+File encryption for address isC:\Users\jeffe\Projects\test-dir\i6.waw
+Key used for encryption isxc_W0e9R4umkV0Gcge5GS2QQsgct7nlc2Mo7yxjxTgg=
 Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
+Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i6.waw'
 None
 connecting db
 File encryption completed
 Post Encrypt file
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
 Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-ciphered_address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-C:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for decryption4R9T4ErN3lAWSbtBQ1ErSoiDKo8mXl-dOvPyS5iItY4=
-Decrypted value isb'1365'
-Lines in else1365
-Upload address isC:\Users\jeffe\Projects\test-dir\bill.txt
-Content is13650
-Save checkC:\Users\jeffe\Projects\test-dir\eloo.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for encryption isLU4KxQwFtfanm4tdIeV_jl9U94GxJQoMAbBMcqN3BKE=
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i6.waw' order by upload_dt desc fetch first row only
+Corrupt-checkFalse
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i6.waw' order by upload_dt desc fetch first row only
+ciphered_address isC:\Users\jeffe\Projects\test-dir\i6.waw
+C:\Users\jeffe\Projects\test-dir\i6.waw
+Key used for decryptionxc_W0e9R4umkV0Gcge5GS2QQsgct7nlc2Mo7yxjxTgg=
+Decrypted value isb'f3.txt'
+Lines in elsef3.txt
+Upload address isC:\Users\jeffe\Projects\test-dir\f3.txt
+Content isf3.txt-lll
+Save checkC:\Users\jeffe\Projects\test-dir\i6.waw
+File encryption for address isC:\Users\jeffe\Projects\test-dir\i6.waw
+Key used for encryption isFq0Cfvlk17zQ1m9u8iM_Qj79RIj-n28d867qcG7zJ3o=
 Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\eloo.waw', '4R9T4ErN3lAWSbtBQ1ErSoiDKo8mXl-dOvPyS5iItY4=')
+Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i6.waw'
+('C:\\Users\\jeffe\\Projects\\test-dir\\i6.waw', 'xc_W0e9R4umkV0Gcge5GS2QQsgct7nlc2Mo7yxjxTgg=')
 Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='LU4KxQwFtfanm4tdIeV_jl9U94GxJQoMAbBMcqN3BKE=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
+Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='Fq0Cfvlk17zQ1m9u8iM_Qj79RIj-n28d867qcG7zJ3o=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i6.waw'
 connecting db
 File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\eloo.waw','2021-11-26-08:10:32')
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\i6.waw','2021-11-26-08:23:06')
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
 Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-ciphered_address isC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-C:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-Key used for decryptionScBPyBumZoOudcGstzFEkMI0p_tqdmo26Lfs8HCRIoc=
-Decrypted value isb'PrestonCt_C'
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','jeffrey','C:\Users\jeffe\Projects\test-dir\vwuhhw.waw','2021-11-26-08:10:34')
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i6.waw' order by upload_dt desc fetch first row only
+Corrupt-checkFalse
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i6.waw' order by upload_dt desc fetch first row only
+ciphered_address isC:\Users\jeffe\Projects\test-dir\i6.waw
+C:\Users\jeffe\Projects\test-dir\i6.waw
+Key used for decryptionFq0Cfvlk17zQ1m9u8iM_Qj79RIj-n28d867qcG7zJ3o=
+Decrypted value isb'f3.txt-lll'
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','jeffrey','C:\Users\jeffe\Projects\test-dir\i6.waw','2021-11-26-08:23:08')
 METHOD ISGET
-Lines in elsePrestonCt_C
-Upload address isC:\Users\jeffe\Projects\test-dir\street.txt
-Content isPrestonCt_C
-Save checkC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-Key used for encryption is24abVHYFeFMzy920JI5MGfyIbJDJN8HIeS0UIBzuCVw=
+Lines in elsef3.txt-lll
+Upload address isC:\Users\jeffe\Projects\test-dir\f3.txt
+Content isf3.txt-lll
+Save checkC:\Users\jeffe\Projects\test-dir\i6.waw
+File encryption for address isC:\Users\jeffe\Projects\test-dir\i6.waw
+Key used for encryption is6NPWRqP1r_NCSabJomAzKVqLWj-j9wu7t440jZKieYE=
 Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\vwuhhw.waw', 'ScBPyBumZoOudcGstzFEkMI0p_tqdmo26Lfs8HCRIoc=')
+Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i6.waw'
+('C:\\Users\\jeffe\\Projects\\test-dir\\i6.waw', 'Fq0Cfvlk17zQ1m9u8iM_Qj79RIj-n28d867qcG7zJ3o=')
 Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='24abVHYFeFMzy920JI5MGfyIbJDJN8HIeS0UIBzuCVw=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw'
+Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='6NPWRqP1r_NCSabJomAzKVqLWj-j9wu7t440jZKieYE=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i6.waw'
 connecting db
 File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\vwuhhw.waw','2021-11-26-08:10:37')
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\i6.waw','2021-11-26-08:23:11')
 127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
 Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i6.waw' order by upload_dt desc fetch first row only
+Corrupt-checkFalse
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i6.waw' order by upload_dt desc fetch first row only
 file_status_corruptFalse
-ciphered_address isC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-C:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-Key used for decryption24abVHYFeFMzy920JI5MGfyIbJDJN8HIeS0UIBzuCVw=
-Decrypted value isb'PrestonCt_C'
-Lines in elsePrestonCt_C
-Upload address isC:\Users\jeffe\Projects\test-dir\street.txt
-Content isPrestonCt-A
-Save checkC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-Key used for encryption isQqccr1IbKzP00kZ_biBRJISDdIPpf0j2qIBpnaKD62s=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\vwuhhw.waw', '24abVHYFeFMzy920JI5MGfyIbJDJN8HIeS0UIBzuCVw=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='Qqccr1IbKzP00kZ_biBRJISDdIPpf0j2qIBpnaKD62s=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\vwuhhw.waw','2021-11-26-08:10:43')
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
+Old path is C:\Users\jeffe\Projects\test-dir\i6.waw
+New path is C:\Users\jeffe\Projects\test-dir\i7.waw
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
 Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-ciphered_address isC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-C:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-Key used for decryptionQqccr1IbKzP00kZ_biBRJISDdIPpf0j2qIBpnaKD62s=
-Decrypted value isb'PrestonCt-A'
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','jeffrey','C:\Users\jeffe\Projects\test-dir\vwuhhw.waw','2021-11-26-08:10:48')
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
+Corrupt-checkFalse
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
+ciphered_address isC:\Users\jeffe\Projects\test-dir\i7.waw
+C:\Users\jeffe\Projects\test-dir\i7.waw
+Key used for decryption6NPWRqP1r_NCSabJomAzKVqLWj-j9wu7t440jZKieYE=
+Decrypted value isb'f3.txt-lll'
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','jeffrey','C:\Users\jeffe\Projects\test-dir\i7.waw','2021-11-26-08:23:19')
 METHOD ISGET
-Lines in elsePrestonCt-A
-Upload address isC:\Users\jeffe\Projects\test-dir\street.txt
-Content isPrestonCt-A
-Save checkC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\vwuhhw.waw
-Key used for encryption isTP9QON-TBkw0CqVbqkNR3EQvzbu5niQkO6khkwwAYB0=
+Lines in elsef3.txt-lll
+Upload address isC:\Users\jeffe\Projects\test-dir\f4.txt
+Content isf3.txt-lll
+Save checkC:\Users\jeffe\Projects\test-dir\i7.waw
+File encryption for address isC:\Users\jeffe\Projects\test-dir\i7.waw
+Key used for encryption isSdhKBQuESxa23qT_-kDx5gF3CBCOGZjhQp6Er_NYJoI=
 Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\vwuhhw.waw', 'Qqccr1IbKzP00kZ_biBRJISDdIPpf0j2qIBpnaKD62s=')
+Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i7.waw'
+('C:\\Users\\jeffe\\Projects\\test-dir\\i7.waw', '6NPWRqP1r_NCSabJomAzKVqLWj-j9wu7t440jZKieYE=')
 Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='TP9QON-TBkw0CqVbqkNR3EQvzbu5niQkO6khkwwAYB0=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw'
+Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='SdhKBQuESxa23qT_-kDx5gF3CBCOGZjhQp6Er_NYJoI=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i7.waw'
 connecting db
 File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\vwuhhw.waw','2021-11-26-08:10:50')
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\i7.waw','2021-11-26-08:23:20')
 127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+Corrupt-checkTrue
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.waw59.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.waw59.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
+Corrupt-checkFalse
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
 file_status_corruptFalse
-ciphered_address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-C:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for decryptionLU4KxQwFtfanm4tdIeV_jl9U94GxJQoMAbBMcqN3BKE=
-Decrypted value isb'13650'
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','jeffrey','C:\Users\jeffe\Projects\test-dir\eloo.waw','2021-11-26-08:10:53')
+Old path is C:\Users\jeffe\Projects\test-dir\i7.waw
+New path is C:\Users\jeffe\Projects\test-dir\i5.waw
+Error while renaming [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\jeffe\\Projects\\test-dir\\i7.waw' -> 'C:\\Users\\jeffe\\Projects\\test-dir\\i5.waw'
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+Corrupt-checkTrue
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+Corrupt-checkFalse
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
+Corrupt-checkFalse
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
+ciphered_address isC:\Users\jeffe\Projects\test-dir\i7.waw
+C:\Users\jeffe\Projects\test-dir\i7.waw
+Key used for decryptionSdhKBQuESxa23qT_-kDx5gF3CBCOGZjhQp6Er_NYJoI=
+Decrypted value isb'f3.txt-lll'
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','jeffrey','C:\Users\jeffe\Projects\test-dir\i7.waw','2021-11-26-08:23:44')
 METHOD ISGET
-Lines in else13650
-Upload address isC:\Users\jeffe\Projects\test-dir\bill.txt
-Content is13650
-Save checkC:\Users\jeffe\Projects\test-dir\eloo.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for encryption isru1ncLRlIXWsFgRNxCyMkno0iUXQa1aquoleoJ5hv_0=
+Lines in elsef3.txt-lll
+Upload address isC:\Users\jeffe\Projects\test-dir\f4.txt
+Content isf3.txt-lll
+Save checkC:\Users\jeffe\Projects\test-dir\i7.waw
+File encryption for address isC:\Users\jeffe\Projects\test-dir\i7.waw
+Key used for encryption is1KzS4Apx4MBhWUkS3_JRuKObDMFoRpbbaXCPtoYOdDM=
 Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\eloo.waw', 'LU4KxQwFtfanm4tdIeV_jl9U94GxJQoMAbBMcqN3BKE=')
+Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i7.waw'
+('C:\\Users\\jeffe\\Projects\\test-dir\\i7.waw', 'SdhKBQuESxa23qT_-kDx5gF3CBCOGZjhQp6Er_NYJoI=')
 Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='ru1ncLRlIXWsFgRNxCyMkno0iUXQa1aquoleoJ5hv_0=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
+Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='1KzS4Apx4MBhWUkS3_JRuKObDMFoRpbbaXCPtoYOdDM=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i7.waw'
 connecting db
 File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\eloo.waw','2021-11-26-08:10:55')
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\i7.waw','2021-11-26-08:23:46')
 127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+Corrupt-checkTrue
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.waw49.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.waw59.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.waw59.0
-file_status_corruptFalse
-Performing system checks...
-
-Input field for text
-lines are13650
-form lines are13650
-System check identified no issues (0 silenced).
-November 26, 2021 - 08:15:57
-Django version 3.2.9, using settings 'DAlphaFS.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CTRL-BREAK.
-127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
 file_status_corruptFalse
-ciphered_address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-C:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for decryptionru1ncLRlIXWsFgRNxCyMkno0iUXQa1aquoleoJ5hv_0=
-Decrypted value isb'13650'
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','jeffrey','C:\Users\jeffe\Projects\test-dir\eloo.waw','2021-11-26-08:16:10')
+ciphered_address isC:\Users\jeffe\Projects\test-dir\i5.waw
+C:\Users\jeffe\Projects\test-dir\i5.waw
+Key used for decryptionjSptn6XZSCUfzq1qvjO84GuUtKNJN8xx3G0EVO7EQQk=
+Decrypted value isb'f2.txt'
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','jeffrey','C:\Users\jeffe\Projects\test-dir\i5.waw','2021-11-26-08:23:47')
 METHOD ISGET
-Lines in else13650
-Upload address isC:\Users\jeffe\Projects\test-dir\bill.txt
-Content is13650
-Save checkC:\Users\jeffe\Projects\test-dir\eloo.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for encryption isKLXJI86bYQteIuBHs5i2MlMuvAXNTFbLbSyrU-JFHIA=
+Lines in elsef2.txt
+Upload address isC:\Users\jeffe\Projects\test-dir\f2.txt
+Content isf2.txt
+Save checkC:\Users\jeffe\Projects\test-dir\i5.waw
+File encryption for address isC:\Users\jeffe\Projects\test-dir\i5.waw
+Key used for encryption isSqlA945ufoRfOx50AgZe_VDOo1ks0TTU1wXpqo0qaBM=
 Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\eloo.waw', 'ru1ncLRlIXWsFgRNxCyMkno0iUXQa1aquoleoJ5hv_0=')
+Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i5.waw'
+('C:\\Users\\jeffe\\Projects\\test-dir\\i5.waw', 'jSptn6XZSCUfzq1qvjO84GuUtKNJN8xx3G0EVO7EQQk=')
 Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='KLXJI86bYQteIuBHs5i2MlMuvAXNTFbLbSyrU-JFHIA=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
+Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='SqlA945ufoRfOx50AgZe_VDOo1ks0TTU1wXpqo0qaBM=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i5.waw'
 connecting db
 File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\eloo.waw','2021-11-26-08:16:12')
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\i5.waw','2021-11-26-08:23:49')
 127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+Corrupt-checkTrue
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i5.wawfirst2021-11-26-08:23:48second2021-11-26-08:23:4959.0
+Corrupt-checkTrue
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i5.wawfirst2021-11-26-08:23:48second2021-11-26-08:23:4959.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-file_status_corruptFalse
-ciphered_address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-C:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for decryptionKLXJI86bYQteIuBHs5i2MlMuvAXNTFbLbSyrU-JFHIA=
-Decrypted value isb'13650'
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','jeffrey','C:\Users\jeffe\Projects\test-dir\eloo.waw','2021-11-26-08:17:01')
-METHOD ISGET
-Lines in else13650
-Upload address isC:\Users\jeffe\Projects\test-dir\bill.txt
-Content is13650
-Save checkC:\Users\jeffe\Projects\test-dir\eloo.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for encryption iscU8T2ys0LEiPDmbQiFAJzuFCtxt75nxzgfvbErRniUI=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\eloo.waw', 'KLXJI86bYQteIuBHs5i2MlMuvAXNTFbLbSyrU-JFHIA=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='cU8T2ys0LEiPDmbQiFAJzuFCtxt75nxzgfvbErRniUI=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\eloo.waw','2021-11-26-08:17:03')
-127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
 file_status_corruptFalse
 127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+Corrupt-checkTrue
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i5.wawfirst2021-11-26-08:23:48second2021-11-26-08:23:4959.0
+Corrupt-checkTrue
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i5.wawfirst2021-11-26-08:23:48second2021-11-26-08:23:4959.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
 file_status_corruptFalse
-ciphered_address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-C:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for decryptioncU8T2ys0LEiPDmbQiFAJzuFCtxt75nxzgfvbErRniUI=
-Decrypted value isb'13650'
-Lines in else13650
-Upload address isC:\Users\jeffe\Projects\test-dir\bill.txt
-Content is13650lit
-Save checkC:\Users\jeffe\Projects\test-dir\eloo.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for encryption iszPaAgSYc8D5UdOTZVM_L3lucL-E-lSyMKRqO4wcV9RE=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\eloo.waw', 'cU8T2ys0LEiPDmbQiFAJzuFCtxt75nxzgfvbErRniUI=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='zPaAgSYc8D5UdOTZVM_L3lucL-E-lSyMKRqO4wcV9RE=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\eloo.waw','2021-11-26-08:18:22')
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
+Old path is C:\Users\jeffe\Projects\test-dir\i7.waw
+New path is C:\Users\jeffe\Projects\test-dir\i5.waw
+Error while renaming [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\jeffe\\Projects\\test-dir\\i7.waw' -> 'C:\\Users\\jeffe\\Projects\\test-dir\\i5.waw'
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+Corrupt-checkTrue
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i5.wawfirst2021-11-26-08:23:48second2021-11-26-08:23:4959.0
+Corrupt-checkTrue
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i5.wawfirst2021-11-26-08:23:48second2021-11-26-08:23:4959.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-ciphered_address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-C:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for decryptionzPaAgSYc8D5UdOTZVM_L3lucL-E-lSyMKRqO4wcV9RE=
-Decrypted value isb'13650lit'
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','jeffrey','C:\Users\jeffe\Projects\test-dir\eloo.waw','2021-11-26-08:18:24')
-METHOD ISGET
-Lines in else13650lit
-Upload address isC:\Users\jeffe\Projects\test-dir\bill.txt
-Content is13650lit
-Save checkC:\Users\jeffe\Projects\test-dir\eloo.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\eloo.waw
-Key used for encryption isZOGJ86GdLUx6sLPWysa_HUYMwzr818xsoNvS1m8Jbi8=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\eloo.waw', 'zPaAgSYc8D5UdOTZVM_L3lucL-E-lSyMKRqO4wcV9RE=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='ZOGJ86GdLUx6sLPWysa_HUYMwzr818xsoNvS1m8Jbi8=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\eloo.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\eloo.waw','2021-11-26-08:18:27')
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
 127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+Corrupt-checkTrue
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i5.wawfirst2021-11-26-08:23:48second2021-11-26-08:23:4959.0
+Corrupt-checkTrue
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i5.wawfirst2021-11-26-08:23:48second2021-11-26-08:23:4959.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i7.waw' order by upload_dt desc fetch first row only
 file_status_corruptFalse
-POST METHOD INVOKED
-Pre create file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."filePermission" WHERE "filePermission"."fileName"='C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw'
-None
-Making file
-New address value isC:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('CREATE','jeffrey','C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw','2021-11-26-08:18:38')
-Post create file
-File encryption for address isC:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw
-Key used for encryption isPbEReWAxkX4sc_unM_bo_CTvR-VmQlbsTnivz2V7CLM=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw'
-None
-connecting db
-File encryption completed
-Post Encrypt file
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
+File to be removed isC:\Users\jeffe\Projects\test-dir\i7.waw
+Filename to be deleted isC:\Users\jeffe\Projects\test-dir\i7.waw
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
 Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i5.wawfirst2021-11-26-08:23:48second2021-11-26-08:23:4959.0
 Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-ciphered_address isC:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw
-C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw
-Key used for decryptionPbEReWAxkX4sc_unM_bo_CTvR-VmQlbsTnivz2V7CLM=
-Decrypted value isb'dangerous.txt'
-Lines in elsedangerous.txt
-Upload address isC:\Users\jeffe\Projects\test-dir\dangerous.txt
-Content isdangerous.txtoeob
-Save checkC:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw
-Key used for encryption isP0OQJY7AbypBZFLk-G0KubapkimfPyfXzURTyvErzRs=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\gdqjhurxv.waw', 'PbEReWAxkX4sc_unM_bo_CTvR-VmQlbsTnivz2V7CLM=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='P0OQJY7AbypBZFLk-G0KubapkimfPyfXzURTyvErzRs=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw','2021-11-26-08:18:45')
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-ciphered_address isC:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw
-C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw
-Key used for decryptionP0OQJY7AbypBZFLk-G0KubapkimfPyfXzURTyvErzRs=
-Decrypted value isb'dangerous.txtoeob'
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('READ','jeffrey','C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw','2021-11-26-08:18:48')
-METHOD ISGET
-Lines in elsedangerous.txtoeob
-Upload address isC:\Users\jeffe\Projects\test-dir\dangerous.txt
-Content isdangerous.txtoeob
-Save checkC:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw
-File encryption for address isC:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw
-Key used for encryption is7QZPnm_F2tGUKptHeXFQOAZm4b6oheu77nS1IvDQE7w=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw'
-('C:\\Users\\jeffe\\Projects\\test-dir\\gdqjhurxv.waw', 'P0OQJY7AbypBZFLk-G0KubapkimfPyfXzURTyvErzRs=')
-Already exists
-Update SQL isUPDATE "public"."encryptionKeys" SET encrypt_key='7QZPnm_F2tGUKptHeXFQOAZm4b6oheu77nS1IvDQE7w=' WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw'
-connecting db
-File encryption completed
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('EDIT','jeffrey','C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw','2021-11-26-08:18:56')
-127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\eloo.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\gdqjhurxv.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\urdg.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\urdg.wawfirst2021-11-26-08:07:35second2021-11-26-08:07:4649.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\vwuhhw.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\vwuhhw.wawfirst2021-11-26-08:10:49second2021-11-26-08:10:5059.0
-file_status_corruptFalse
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i5.wawfirst2021-11-26-08:23:48second2021-11-26-08:23:4959.0
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('DELETE','jeffrey','C:\Users\jeffe\Projects\test-dir\i7.waw','2021-11-26-08:27:59')
 127.0.0.1
 file_status_corruptTrue
 POST METHOD INVOKED
 Pre create file
 Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."filePermission" WHERE "filePermission"."fileName"='C:\Users\jeffe\Projects\test-dir\i4.waw'
+('C:\\Users\\jeffe\\Projects\\test-dir\\i4.waw', 'jeffrey', 'Public', 'File')
+Already exists
+Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."filePermission" WHERE "filePermission"."fileName"='C:\Users\jeffe\Projects\test-dir\i4.waw'
+('C:\\Users\\jeffe\\Projects\\test-dir\\i4.waw', 'jeffrey', 'Public', 'File')
+Already exists
+Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."filePermission" WHERE "filePermission"."fileName"='C:\Users\jeffe\Projects\test-dir\i4.waw_d'
 None
-Making file
-New address value isC:\Users\jeffe\Projects\test-dir\i4.waw
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('CREATE','jeffrey','C:\Users\jeffe\Projects\test-dir\i4.waw','2021-11-26-08:19:29')
+New address value isC:\Users\jeffe\Projects\test-dir\i4.waw_d
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('CREATE','jeffrey','C:\Users\jeffe\Projects\test-dir\i4.waw_d','2021-11-26-08:28:19')
 Post create file
 File encryption for address isC:\Users\jeffe\Projects\test-dir\i4.waw
-Key used for encryption isljKddy1yDFXM2r3VD37HUmKsU6saWBl9P54Dnmk5jtM=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i4.waw'
-None
-connecting db
-File encryption completed
+Error while encrypting File[Errno 2] No such file or directory: 'C:\\Users\\jeffe\\Projects\\test-dir\\i4.waw'
 Post Encrypt file
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw_d' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw_d' order by upload_dt desc fetch first row only
 POST METHOD INVOKED
 Pre create file
 Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."filePermission" WHERE "filePermission"."fileName"='C:\Users\jeffe\Projects\test-dir\i5.waw'
+('C:\\Users\\jeffe\\Projects\\test-dir\\i5.waw', 'jeffrey', 'Public', 'File')
+Already exists
+Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."filePermission" WHERE "filePermission"."fileName"='C:\Users\jeffe\Projects\test-dir\i5.waw'
+('C:\\Users\\jeffe\\Projects\\test-dir\\i5.waw', 'jeffrey', 'Public', 'File')
+Already exists
+Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."filePermission" WHERE "filePermission"."fileName"='C:\Users\jeffe\Projects\test-dir\i5.waw_d'
 None
-Making file
-New address value isC:\Users\jeffe\Projects\test-dir\i5.waw
-Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('CREATE','jeffrey','C:\Users\jeffe\Projects\test-dir\i5.waw','2021-11-26-08:19:47')
+New address value isC:\Users\jeffe\Projects\test-dir\i5.waw_d
+Inserting into historyINSERT INTO "public"."uploadhistory"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES('CREATE','jeffrey','C:\Users\jeffe\Projects\test-dir\i5.waw_d','2021-11-26-08:28:29')
 Post create file
 File encryption for address isC:\Users\jeffe\Projects\test-dir\i5.waw
-Key used for encryption isjSptn6XZSCUfzq1qvjO84GuUtKNJN8xx3G0EVO7EQQk=
-Writing encrypted file
-Checking whether fileName already exists in encryption Table--2SELECT * FROM "public"."encryptionKeys" WHERE "encryptionKeys"."fileName"='C:\Users\jeffe\Projects\test-dir\i5.waw'
-None
-connecting db
-File encryption completed
+Error while encrypting File[Errno 2] No such file or directory: 'C:\\Users\\jeffe\\Projects\\test-dir\\i5.waw'
 Post Encrypt file
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw_d' order by upload_dt desc fetch first row only
 Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
-127.0.0.1
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw_d' order by upload_dt desc fetch first row only
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw_d' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i5.waw_dfirst2021-11-26-08:28:28second2021-11-26-08:28:2959.0
 Corrupt-checkTrue
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i4.waw' order by upload_dt desc fetch first row only
-Corruption testC:\Users\jeffe\Projects\test-dir\i4.wawfirst2021-11-26-08:20:04second2021-11-26-08:19:2935.0
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
-Corrupt-checkFalse
-SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw' order by upload_dt desc fetch first row only
-file_status_corruptFalse
+SQL for corruption isselect upload_dt from "public"."uploadhistory" where filename='C:\Users\jeffe\Projects\test-dir\i5.waw_d' order by upload_dt desc fetch first row only
+Corruption testC:\Users\jeffe\Projects\test-dir\i5.waw_dfirst2021-11-26-08:28:28second2021-11-26-08:28:2959.0
