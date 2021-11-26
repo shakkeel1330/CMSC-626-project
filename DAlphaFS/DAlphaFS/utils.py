@@ -11,6 +11,10 @@ import string
 from .forms import *
 from shutil import copyfile
 
+shared_ref_dir = 'F:\\DAlphaFS\\trial'
+path_ref = '\\'
+perm_home= shared_ref_dir
+
 def get_content(path, s_files, s_dirs,user_name):
     path = '{}/'.format(path) if path[-1] != '/' else str(path)
     dirs = []
@@ -63,7 +67,7 @@ def handle_save_file(content, address,user_name):
     destination = open(address,'w')
     destination.write(content)
     destination.close()
-    dst = 'C:\\Users\jeffe\\Projects\\ComputerSecurity\\CMSC-626-project\\DAlphaFS\\DAlphaFS\\readme.txt'
+    dst = 'readme.txt'
     copyfile(address,dst)
     encryptFile(address)  
     upload_uploadHistory("EDIT",user_name,address,datetime.today().strftime('%Y-%m-%d-%H:%M:%S'))     
@@ -81,10 +85,16 @@ def handle_uploaded_file(f, address,access_level,user_name):
     encryptFile(address)  
     upload_uploadHistory("UPLOAD",user_name,address,datetime.today().strftime('%Y-%m-%d-%H:%M:%S'))     
 
+def passwrd():
+    password = ""
+    with open('password.txt', 'r') as f:
+        password = f.read()
+    return password
+
 # Check if file already exists. If yes, creates an entry in the uploadTable
 def fileversionupdate(file_path,updated_user):
     try:
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         cur = conn.cursor()
         sql="SELECT "
     
@@ -183,7 +193,7 @@ def checkifexists_encTbl(filepath,action):
         else:
             select_sql = "SELECT * FROM \"public\".\"filePermission\" WHERE \"filePermission\".\"fileName\"="+single_quote + str(filepath) + single_quote
         #select_sql=""single_quote + str(filepath) + single_quote
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         cur = conn.cursor()
         print("Checking whether fileName already exists in encryption Table--2"+str(select_sql))
         cur.execute(select_sql)
@@ -200,7 +210,7 @@ def checkifexists_encTbl(filepath,action):
 def runQuery(sql):
     try:
         print('connecting db')
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         cur = conn.cursor()
         #print('PostgreSQL database version:')
         #print("SQL is"+sql)
@@ -221,7 +231,7 @@ def runQuery(sql):
 
 def getKeyusingfileName(filepath):
     try:
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         cur = conn.cursor()
         print(filepath)
         sql ="SELECT encrypt_key from \"public\".\"encryptionKeys\" WHERE \"fileName\"=" +"\'"+ str(filepath) +"\'"
@@ -240,7 +250,7 @@ def getKeyusingfileName(filepath):
 def handle_edit_file(address,user_name):
     try:
         ciphered_address = getcipheredaddress(address)
-        dst = 'C:\\Users\jeffe\\Projects\\ComputerSecurity\\CMSC-626-project\\DAlphaFS\\DAlphaFS\\readme.txt'
+        dst = 'readme.txt'
         print("ciphered_address is"+str(ciphered_address))
         filename = address
         fernet = Fernet(getKeyusingfileName(ciphered_address).encode())
@@ -288,7 +298,7 @@ def handle_make_file(address, content,user_name,access_level):
 
 def deletefileEntry(filepath):
     try:
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         cur = conn.cursor()
         print("Filename to be deleted is"+str(filepath))
         sql = "DELETE FROM \"public\".\"encryptionKeys\" WHERE \"fileName\"=" +"\'"+ str(filepath) +"\'"
@@ -303,25 +313,27 @@ def deletefileEntry(filepath):
 
 def deletefilePermission(filepath):
     try:
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
-        cur = conn.cursor()
-        print("Filename to be deleted is"+str(filepath))
-        sql = "DELETE FROM \"public\".\"filePermission\" WHERE \"fileName\"=" +"\'"+ str(filepath) +"\'"
-        cur.execute(sql)
-        conn.commit()
+        # conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
+        # cur = conn.cursor()
+        # print("Filename to be deleted is"+str(filepath))
+        # sql = "DELETE FROM \"public\".\"filePermission\" WHERE \"fileName\"=" +"\'"+ str(filepath) +"\'"
+        # cur.execute(sql)
+        # conn.commit()
+        pass
     except (Exception,pgad.DatabaseError) as error:
         print(error)
-    finally:
-        if conn is not None:
-            conn.close()
-            #print('Database connection closed')
+    # finally:
+    #     if conn is not None:
+    #         conn.close()
+    #         #print('Database connection closed')
 
 def writePermission(file_dir_name,user_name,access_level,type):
     try:
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         cur = conn.cursor()
         single_quote = "\'"
         sql="INSERT INTO \"public\".\"filePermission\" VALUES("+single_quote+file_dir_name+single_quote+","+single_quote+user_name+single_quote+","+single_quote+access_level+single_quote+","+single_quote+type+single_quote+")"
+        #print('*******', sql)
         cur.execute(sql)
         conn.commit()
     except(Exception,pgad.DatabaseError) as error:
@@ -333,7 +345,7 @@ def writePermission(file_dir_name,user_name,access_level,type):
 
 def getFiledetails(file_name):
     try:
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         cur = conn.cursor()
         #print("Filename to be checked in DB is"+str(file_name))
         sql = "SELECT *  FROM \"public\".\"filePermission\" WHERE \"fileName\"=" +"\'"+ str(file_name) +"\'"
@@ -358,7 +370,7 @@ def getFiledetails(file_name):
 
 def modifyPermissionindB(file_path,access_level):
     try:
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         cur = conn.cursor()
         sql = "UPDATE \"public\".\"filePermission\" SET \"Access\" = "+"\'"+access_level+"\'"+"WHERE \"fileName\" = "+"\'"+file_path+"\'"
         print("Update query is"+sql)    
@@ -385,7 +397,7 @@ def renamefunc(old_path,new_path):
 # Invoked when there is a rename of the file or directory
 def updatefileName(old_path,new_path):
     try:
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         cur = conn.cursor()
         update_key_tbl_sql = "UPDATE \"public\".\"encryptionKeys\" SET \"fileName\" =" + "\'" + new_path + "\'" +"WHERE \"fileName\" = "+"\'"+old_path+"\'"
         update_filePermission_sql = "UPDATE \"public\".\"filePermission\" SET \"fileName\" =" + "\'" + new_path + "\'" +"WHERE \"fileName\" = "+"\'"+old_path+"\'"
@@ -397,8 +409,9 @@ def updatefileName(old_path,new_path):
         print("Error while updating the database for rename"+error)
 
 def fetchMessagesfromKey(msg_key):
+    global perm_home
     fire_wall = True 
-    conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+    conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
     cur = conn.cursor()
     single_quote="\'"
     if(fire_wall):
@@ -409,22 +422,22 @@ def fetchMessagesfromKey(msg_key):
         cur.execute(param_sql,[msg_key])
         results = cur.fetchall()
         total_msgs = []
-        
+        print('X-X', param_sql)
         #files.append({'name': ld, 'size': stat("{}{}".format(path, ld)).st_size,'del_visibility':visibility})
         for result_msg in results:
             #total_msgs.append(result_msg[0])
-            perm_home='C:\\Users\\jeffe\\Projects\\test-dir'
+            #perm_home='C:\\Users\\jeffe\\Projects\\test-dir'
             decipher_addr = getdecipheredcurraddress(result_msg[2],perm_home)
             total_msgs.append({'action':result_msg[0],'username':result_msg[1],'filename':decipher_addr,'update_time':result_msg[3]})
         return total_msgs
     else:
-        #conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        #conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         #cur = conn.cursor()
         #select_sql = "SELECT message from \"public\".\"msgTable\"  WHERE MESSAGE_KEY = " + "\'" + msg_key + "\'" 
         select_sql= "SELECT uh.\"file_action\",uh.\"username\",uh.\"filename\",uh.\"upload_dt\" FROM \"public\".\"filePermission\" fp inner join \"public\".\"uploadhistory\" uh on (uh.fileName=fp.\"fileName\") inner join \"public\".\"keyUser\" ku on (ku.username = fp.\"userName\") where ku.\"pvtKey\" = \'"+msg_key+single_quote+"order by uh.upload_id desc"
         print("Select sql is"+select_sql)
         cur.execute(select_sql)
-        perm_home='C:\\Users\\jeffe\\Projects\\test-dir'
+        #perm_home='C:\\Users\\jeffe\\Projects\\test-dir'
         conn.commit()
         total_msgs = []
         try:
@@ -443,13 +456,13 @@ def upload_uploadHistory(file_action,userName,fileName,upload_time):
     single_quote = "\'"
     insert_sql="INSERT INTO \"public\".\"uploadhistory\"(file_ACTION,USERNAME,FILENAME,UPLOAD_DT) VALUES("+single_quote+file_action+single_quote+","+single_quote+userName+single_quote+","+single_quote+fileName+single_quote+","+single_quote+upload_time+single_quote+")"
     try:
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         cur = conn.cursor()
         print("Inserting into history"+str(insert_sql))
         cur.execute(insert_sql)
         conn.commit()
     except(Exception) as error:
-        print("Error while uploading upload History"+ error)
+        print("Error while uploading upload History"+ str(error))
 
     
 

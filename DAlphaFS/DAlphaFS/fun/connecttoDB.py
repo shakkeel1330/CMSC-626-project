@@ -1,17 +1,17 @@
 import psycopg2 as pgad
 try:
-    conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+    conn = pgad.connect("dbname =testDB user=postgres password=admin")
     cur = conn.cursor()
     #print('PostgreSQL database version:')
     #cur.execute('SELECT * FROM \"fileSystem\".\"encryptionKeys\"')
     #cur.execute('SELECT table_name, column_name, data_type FROM information_schema.columns WHERE table_name = \'encryptionKeys\';')
     #cur.execute('INSERT INTO \"fileSystem\".\"encryptionKeys\"(fileName,encrypt_key) VALUES(abc,def)')
-    cur.execute('INSERT INTO \"public\".\"testTable\" VALUES(\'C::\',\'gif\')')
+    #cur.execute('INSERT INTO \"public\".\"testTable\" VALUES(\'C::\',\'gif\')')
     #cur.execute('INSERT INTO testTable(fileName) VALUES(abc)')
         # display the PostgreSQL database server version
     #db_version = cur.fetchone()
     #print(db_version)
-    conn.commit()
+    #conn.commit()
 	# close the communication with the PostgreSQL
     cur.close()
 except (Exception, pgad.DatabaseError) as error:

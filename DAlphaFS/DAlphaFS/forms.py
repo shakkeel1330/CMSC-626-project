@@ -40,7 +40,7 @@ class editFileForm(forms.Form):
     #file_value=self.returnValue()
     
     lines ='Error'
-    with open('C:\\Users\jeffe\\Projects\\ComputerSecurity\\CMSC-626-project\\DAlphaFS\\DAlphaFS\\readme.txt') as f:
+    with open('readme.txt') as f:
         lines = f.read()
         
     print('lines are'+lines)

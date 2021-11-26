@@ -8,9 +8,9 @@ from django.http import HttpResponseRedirect,HttpResponse
 
 
 shared_ref_map = {}
-shared_ref_dir = 'C:\\Users\\jeffe\\Projects\\test-dir'
+shared_ref_dir = 'F:\\DAlphaFS\\trial'
 path_ref = '\\'
-perm_home='C:\\Users\\jeffe\\Projects\\test-dir'
+perm_home= shared_ref_dir
 
 def gotoHomePage(request):
     global shared_ref_dir
@@ -34,7 +34,7 @@ def shared_dir(request):
     #shared_ref_dir = 'C:\\Users\\shakk\\Desktop\\test_dir'
     #shared_ref_dir = 'C:\\Users\\jeffe\\Projects\\test-dir'
     
-    shared_ref_map[str(request.user)] = 'C:\\Users\\jeffe\\Projects\\test-dir'
+    shared_ref_map[str(request.user)] = perm_home
     shared_ref_map_dir = shared_ref_map[str(request.user)]
     #original_dir = shared_ref_map_dir
     curr_dir = getdecipheredcurraddress(shared_ref_map_dir,perm_home)
@@ -75,6 +75,7 @@ def deleteFile(request,file_name):
     curr_dir = getdecipheredcurraddress(shared_ref_map_dir,perm_home)
     dirs,files = get_content(shared_ref_map_dir,True,True,str(request.user))
     shared_ref_map[str(request.user)] = shared_ref_map_dir
+    upload_uploadHistory("DELETE",str(request.user),file_ref_dir,datetime.today().strftime('%Y-%m-%d-%H:%M:%S'))
     return render(request, template_name='shared_dir.html',
                   context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir})
 
@@ -113,7 +114,8 @@ def deleteFolder(request,folder_name):
     global shared_ref_dir
     global shared_ref_map
     shared_ref_map_dir = shared_ref_map[str(request.user)]
-    dir_ref_dir = shared_ref_map_dir + path_ref + folder_name
+    dir_ref_dir = shared_ref_map_dir + path_ref + caesar(folder_name, 3)
+    print("lol", folder_name)
     util_delete_Folder(dir_ref_dir)
     shared_ref_map[str(request.user)] = shared_ref_map_dir
     return gotoHomePage(request)
@@ -138,7 +140,7 @@ def editFile(request,file_name):
                 form = editFileForm()
                 shared_ref_map[str(request.user)] = shared_ref_map_dir   
                 lines=""
-                with open('C:\\Users\jeffe\\Projects\\ComputerSecurity\\CMSC-626-project\\DAlphaFS\\DAlphaFS\\readme.txt') as f:
+                with open('readme.txt') as f:
                     lines = f.read()
                 print("Lines in else-1"+lines)
                 form.data['content'] = lines
@@ -147,7 +149,7 @@ def editFile(request,file_name):
             handle_edit_file(shared_ref_map_dir+path_ref+file_name,str(request.user))
             
             lines=""
-            with open('C:\\Users\jeffe\\Projects\\ComputerSecurity\\CMSC-626-project\\DAlphaFS\\DAlphaFS\\readme.txt') as f:
+            with open('readme.txt') as f:
                 lines = f.read()
             print("Lines in else"+lines)
             form = editFileForm(initial={'content': lines})

@@ -2,13 +2,13 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 def trywithPasswords(pwd):
-    driver = webdriver.Chrome('./chromedriver')
+    driver = webdriver.Chrome('chromedriver')
     #driver.get("http://10.0.0.148:8000/login/?next=/home")
-    driver.get("http://10.200.146.213:8000/login/?next=/home")
+    driver.get("http://127.0.0.1:8000/login/?next=/home")
     print(driver.title)
     search_bar = driver.find_element_by_name("username")
     search_bar.clear()
-    search_bar.send_keys("jeffrey")
+    search_bar.send_keys("testing")
     password_bar = driver.find_element_by_name("password")
     password_bar.send_keys(pwd)
     #submit_button = driver.find_element_by_class_name("login_container")
@@ -29,7 +29,7 @@ def trywithPasswords(pwd):
     driver.close()
     return pwd
 
-password_ls = ['abc','def','ghi','kbc','Nov@2021;;']
+password_ls = ['abc','nononono','ghi','kbc','Nov@2021;;']
 for pwd in password_ls:
     pwd_var = trywithPasswords(pwd)
     if(pwd_var is None):

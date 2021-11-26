@@ -7,6 +7,13 @@ from datetime import datetime
 import psycopg2 as pgad
 # Create your views here.
 
+def passwrd():
+    password = ""
+    with open('password.txt', 'r') as f:
+        password = f.read()
+    return password
+
+
 def registerPage(request):
     if request.user.is_authenticated:
         return redirect('home')
@@ -66,7 +73,7 @@ def checkifLimitExceeded(username,loginTime):
     single_quote ="\'"
     select_sql = "SELECT COUNT(*) FROM \"public\".\"loginaddress\" WHERE \"loginaddress\".\"username\"="+single_quote+username+single_quote +" AND \"loginaddress\".\"loginTime\" like" + single_quote + "%"+loginTime + "%"+single_quote
     try:
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
         cur = conn.cursor()
         print("Select SQL is"+select_sql)
         cur.execute(select_sql)
@@ -84,7 +91,7 @@ def insertfailedlogin(username,ipAddress,loginTime,login_info):
     current_time=datetime.today().strftime('%Y-%m-%d-%H:%M:%S')
     insert_sql="INSERT INTO \"public\".\"loginaddress\" VALUES(" +single_quote + username + single_quote +","+single_quote + ipAddress + single_quote +"," + single_quote + current_time + single_quote +","+single_quote+login_info+single_quote+")"
     try:
-        conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
+        conn = pgad.connect("dbname =testDB user=postgres password="+ passwrd())
         cur = conn.cursor()
         cur.execute(insert_sql)
         conn.commit()
