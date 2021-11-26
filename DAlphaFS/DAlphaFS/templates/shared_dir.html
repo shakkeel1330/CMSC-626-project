@@ -39,7 +39,7 @@
             <a href="{% url 'dir_traversal' dir.name %}" class="btn btn-primary"
                 style="display: inline;">{{dir.name}}</a>
             {% if dir.del_visibility > 0 %}
-            <a href="{% url 'deleteFolder' dir %}" class="btn btn-danger"
+            <a href="{% url 'deleteFolder' dir.name %}" class="btn btn-danger"
                 style="float:right; display: inline;">Delete</a>
             <a href="{% url 'modifyPermission' dir.name %}" class="btn btn-danger"
                 style="float:right; display: inline;">Modify permission</a>
@@ -69,9 +69,10 @@
                 style="float:right; display: inline;">Modify permission</a>
                 <a href="{% url 'renameOperation' file.name %}" class="btn btn-danger"
                 style="float:right; display: inline;">Rename</a>
-                <a href="{% url 'editFile' file.name %}" class="btn btn-danger"
-                style="float:right; display: inline;">Edit</a>
+
             {% endif %}
+            <a href="{% url 'editFile' file.name %}" class="btn btn-danger"
+            style="float:right; display: inline;">Edit</a>
         </div>
         </br>
         {% endfor %}
