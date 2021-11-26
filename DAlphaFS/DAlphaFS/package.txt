@@ -1,0 +1,6 @@
+pytest-shutil
+cryptography
+wsgiref
+psycopg2
+django-user-agents
+selenium
