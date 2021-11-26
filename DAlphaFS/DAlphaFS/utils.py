@@ -449,7 +449,7 @@ def updatefileName(old_path,new_path):
 
 def fetchMessagesfromKey(msg_key):
     global perm_home
-    fire_wall = True 
+    fire_wall = getFirewalloption() 
     conn = pgad.connect("dbname =testDB user=postgres password="+passwrd())
     cur = conn.cursor()
     single_quote="\'"
@@ -571,3 +571,12 @@ def checkwhethercorrupt(filename,lmtime):
     except(Exception) as error:
         return False
         print("Exception while  checking file corruption"+str(error))
+
+def getFirewalloption():
+    lines = ""
+    with open('firewall.txt') as fp:
+        lines = fp.read()
+    if(lines=="YES"):
+        return True 
+    else:
+        return False
