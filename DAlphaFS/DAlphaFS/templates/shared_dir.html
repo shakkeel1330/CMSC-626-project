@@ -4,9 +4,11 @@
 
 <body style="background : url('/static/img/lockopen.gif')">
     {% load static %}
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -20,10 +22,19 @@
             <a href="{% url 'clickhomebtn' %}" name = "Homebtn" class="btn btn-success" style="float:left; ">Home</a>
             <a href="{% url 'goBack' %}" class="btn btn-success" style="float:left; ">Back</a>
             <a href ="{% url 'getMessages' %}" class ="btn btn-success" style ="float:right">getHistory</a>
+            
             <br><br>
         </div>
         <div>
             <p class="breadcrumb">{{curr_dir}}</p>
+            
+            {% if filesafe %}
+            <span style="font-size:200%;"class="badge badge-pill badge-success">All is good</span>
+            {% else %}
+            
+            <span style="font-size:200%;"class="badge badge-pill badge-danger">In danger.Contact Admin</span>
+            {% endif %}
+
         </div>
     <div>
         <!--<h6 style="color: green; text-align: center;">--Directories--</h6>-->
@@ -73,6 +84,8 @@
             {% endif %}
             <a href="{% url 'editFile' file.name %}" class="btn btn-danger"
             style="float:right; display: inline;">Edit</a>
+            <a href="{% url 'readFile' file.name %}" class="btn btn-danger"
+            style="float:right; display: inline;">Read</a>
         </div>
         </br>
         {% endfor %}

@@ -35,5 +35,6 @@ urlpatterns = [
     path('clickhomebtn',views.clickhomebtn,name="clickhomebtn"),
     path('goBack',views.goBack,name="goBack"),
     path('getMessages',views.getMessages,name="getMessages"),
-    path('editFile<path:file_name>',views.editFile,name="editFile")
+    path('editFile<path:file_name>',views.editFile,name="editFile"),
+    path('readFile<path:file_name>',views.readFile,name="readFile")
 ]

@@ -17,13 +17,17 @@ def gotoHomePage(request):
     global shared_ref_map
     global perm_home
     shared_ref_map_dir = shared_ref_map[str(request.user)]
-    dirs,files = get_content(shared_ref_map_dir,True,True,str(request.user))
+    dirs,files,file_status_corrupt = get_content(shared_ref_map_dir,True,True,str(request.user))
     shared_ref_map_dir = shared_ref_map[str(request.user)]
     curr_dir = getdecipheredcurraddress(shared_ref_map_dir,perm_home)
     #print("Current directory is"+curr_dir)
+    filesafe = True
+    
+    if(not file_status_corrupt):
+        filesafe=False
     shared_ref_map[str(request.user)] = shared_ref_map_dir
     return render(request, template_name='shared_dir.html',
-                  context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir})
+                  context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir,'filesafe':filesafe})
 
 @login_required(login_url='login')
 def shared_dir(request):
@@ -38,10 +42,14 @@ def shared_dir(request):
     shared_ref_map_dir = shared_ref_map[str(request.user)]
     #original_dir = shared_ref_map_dir
     curr_dir = getdecipheredcurraddress(shared_ref_map_dir,perm_home)
-    dirs,files = get_content(shared_ref_map_dir,True,True,str(request.user))
+    dirs,files,file_status_corrupt = get_content(shared_ref_map_dir,True,True,str(request.user))
+    print("file_status_corrupt"+str(file_status_corrupt))
     shared_ref_map[str(request.user)] = shared_ref_map_dir
+    filesafe = True
+    if(not file_status_corrupt):
+        filesafe=False
     return render(request, template_name='shared_dir.html',
-                  context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir})
+                  context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir,'filesafe':filesafe})
 
 @login_required(login_url='login')
 def dir_traversal(request,dir):
@@ -50,17 +58,20 @@ def dir_traversal(request,dir):
     global perm_home
     #shared_ref_dir = shared_ref_dir + path_ref + dir
     #original_dir = shared_ref_map_dir
+    file_status_corrupt = True
     shared_ref_map_dir = shared_ref_map[str(request.user)] + path_ref + caesar(dir,3)
     #curr_dir = shared_ref_map[str(request.user)] + path_ref + dir
     curr_dir = getdecipheredcurraddress(shared_ref_map_dir,perm_home)
     shared_ref_map[str(request.user)] = shared_ref_map_dir
     print("Directory to traverse is"+dir+"shared path is"+shared_ref_map_dir)
-    dirs,files = get_content(shared_ref_map_dir,True,True,str(request.user))
+    dirs,files,file_status_corrupt = get_content(shared_ref_map_dir,True,True,str(request.user))
     #curr_dir = shared_ref_dir
-    
+    filesafe = True
+    if(not file_status_corrupt):
+        filesafe=False
     shared_ref_map[str(request.user)] = shared_ref_map_dir
     return render(request, template_name='shared_dir.html',
-                  context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir})
+                  context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir,'filesafe':filesafe})
 
 @login_required(login_url='login') 
 def deleteFile(request,file_name):
@@ -73,11 +84,14 @@ def deleteFile(request,file_name):
     file_ref_dir = shared_ref_map_dir + path_ref + file_name
     util_delete_file(file_ref_dir)
     curr_dir = getdecipheredcurraddress(shared_ref_map_dir,perm_home)
-    dirs,files = get_content(shared_ref_map_dir,True,True,str(request.user))
+    dirs,files,file_status_corrupt = get_content(shared_ref_map_dir,True,True,str(request.user))
     shared_ref_map[str(request.user)] = shared_ref_map_dir
+    filesafe = True
+    if(not file_status_corrupt):
+        filesafe=False
     upload_uploadHistory("DELETE",str(request.user),file_ref_dir,datetime.today().strftime('%Y-%m-%d-%H:%M:%S'))
     return render(request, template_name='shared_dir.html',
-                  context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir})
+                  context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir,'filesafe':filesafe})
 
 @login_required(login_url='login')
 def uploadFiletoDir(request):
@@ -120,6 +134,47 @@ def deleteFolder(request,folder_name):
     shared_ref_map[str(request.user)] = shared_ref_map_dir
     return gotoHomePage(request)
 
+def readFile(request,file_name):
+    global shared_ref_dir
+    global shared_ref_map
+    shared_ref_map_dir = shared_ref_map[str(request.user)]
+    path_ref ="\\"
+    try:
+        if request.method=="POST":
+            form = readFileForm(request.POST)
+            if form.is_valid():
+                content = form.data['content']
+                handle_save_file(content,shared_ref_map_dir+path_ref+file_name,str(request.user))
+                shared_ref_map[str(request.user)] = shared_ref_map_dir
+                form.clean()
+                return goBack(request)
+        else:
+
+            lines = ""
+            print("METHOD IS"+request.method)
+            with open('readme_read.txt') as f:
+                lines = f.read()   
+        #form.data['content'] = lines
+            form = readFileForm(initial={'content':lines})
+            form.data['content'] = lines
+        #form = readFileForm
+            shared_ref_map[str(request.user)] = shared_ref_map_dir
+            handle_read_file(shared_ref_map_dir+path_ref+file_name,str(request.user))
+        #form.clean()
+        lines=""
+        with open('readme.txt') as f:
+            lines = f.read()
+        print("Lines in else"+lines)
+        form = readFileForm(initial={'content': lines})
+            #form.data['content'] = lines
+        shared_ref_map[str(request.user)] = shared_ref_map_dir 
+        return render(request,'readFile.html',{'form':form}) 
+        #upload_uploadHistory("READ",str(request.user),shared_ref_map_dir+path_ref+file_name,datetime.today().strftime('%Y-%m-%d-%H:%M:%S'))
+        #upload_uploadHistory("READ",user_name,address,datetime.today().strftime('%Y-%m-%d-%H:%M:%S'))
+        #return render(request,'readFile.html',{'form':form}) 
+    except(Exception) as error:
+        print("Exception while reading the file and the exception is"+str(error))
+
 @login_required(login_url='login')
 def editFile(request,file_name):
     global shared_ref_dir
@@ -154,7 +209,8 @@ def editFile(request,file_name):
             print("Lines in else"+lines)
             form = editFileForm(initial={'content': lines})
             #form.data['content'] = lines
-            shared_ref_map[str(request.user)] = shared_ref_map_dir  
+            shared_ref_map[str(request.user)] = shared_ref_map_dir 
+             
             return render(request,'editFile.html',{'form':form}) 
     except(Exception) as error:
         print("Exception while editing file is"+str(error))
@@ -277,6 +333,7 @@ def goBack(request):
     global shared_ref_map
     global perm_home
     shared_ref_map_dir = shared_ref_map[str(request.user)]
+    filesafe = True
     if(shared_ref_map_dir == perm_home):
         return HttpResponseRedirect(reverse('shared_dir'))
     else:
@@ -286,12 +343,14 @@ def goBack(request):
         
         prev_dir = shared_ref_map_dir[:len(shared_ref_map_dir)-last_path_ref_index-1]
         print("Prev dir"+str(prev_dir))
-        dirs,files = get_content(prev_dir,True,True,str(request.user))
+        dirs,files,file_status_corrupt = get_content(prev_dir,True,True,str(request.user))
+        if(not file_status_corrupt):
+            filesafe=False
         curr_dir = getdecipheredcurraddress(prev_dir,perm_home)
         shared_ref_map_dir = prev_dir
         shared_ref_map[str(request.user)] = shared_ref_map_dir
         return render(request, template_name='shared_dir.html',
-                  context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir})
+                  context = {'dirs': dirs, 'files': files,'curr_dir' :curr_dir,'filesafe':filesafe})
 
 def getMessages(request):
     form = messageForm(request.POST)

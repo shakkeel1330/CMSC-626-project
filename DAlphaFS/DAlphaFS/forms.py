@@ -50,6 +50,23 @@ class editFileForm(forms.Form):
     content = forms.CharField(widget=forms.Textarea(attrs={'autocomplete':'off'}))
     #content = forms.CharField(widget=forms.Textarea(attrs={'autocomplete':'off'}))
 
+class readFileForm(forms.Form):
+    #name = forms.CharField(max_length=300)
+    #print("Input field for text")
+    #file_str = readfromglobal()
+    #file_value=self.returnValue()
+    
+    lines ='Error'
+    with open('readme_read.txt') as f:
+        lines = f.read()
+        
+    print('form lines are'+lines)
+    #name = forms.TextInput(attrs={'size': 10, 'title': 'Your name'})
+    #name.render('name', 'A name')
+    #content = forms.CharField(widget=forms.Textarea, required=False,initial=lines)
+    content = forms.CharField(widget=forms.Textarea(attrs={'autocomplete':'off','readonly':'on'}))
+    #content = forms.CharField(widget=forms.Textarea(attrs={'autocomplete':'off'}))
+
 class ModifyPermissionForm(forms.Form):
     #
     #forms.CharField(label=file_path,disabled=True)

@@ -26,18 +26,24 @@ def get_content(path, s_files, s_dirs,user_name):
     path = '{}/'.format(path) if path[-1] != '/' else str(path)
     dirs = []
     files = []
+    file_status_corrupt = True
     try:
         for ld in listdir(path):
             if isfile('{}{}'.format(path, ld)) and s_files:
                 file_user_map,file_perm_map = getFiledetails(path[:-1]+"\\"+ld)
                 #if(file_user_m)
                 visibility = 0
-                #print("Corrupt-check"+str(checkwhethercorrupt(path[:-1]+"\\"+ld,datetime.fromtimestamp(getmtime(path[:-1]+"\\"+ld)))))
+                print("Corrupt-check"+str(checkwhethercorrupt(path[:-1]+"\\"+ld,datetime.fromtimestamp(getmtime(path[:-1]+"\\"+ld)))))
                 if(file_user_map == user_name):
                     visibility= 1
                 if(file_user_map == user_name or file_perm_map=='Public'):
-                    #files.append({'name': checkiffilemalicious(reverse_caesar(ld,3),checkwhethercorrupt(path[:-1]+"\\"+ld,datetime.fromtimestamp(getmtime(path[:-1]+"\\"+ld)))), 'size': stat("{}{}".format(path, ld)).st_size,'del_visibility':visibility})
-                    files.append({'name': reverse_caesar(ld,3), 'size': stat("{}{}".format(path, ld)).st_size,'del_visibility':visibility})
+                    if(not checkwhethercorrupt(path[:-1]+"\\"+ld,datetime.fromtimestamp(getmtime(path[:-1]+"\\"+ld)))):
+                        files.append({'name': reverse_caesar(ld,3), 'size': stat("{}{}".format(path, ld)).st_size,'del_visibility':visibility})
+                    else:
+                        file_status_corrupt = False
+                            #files.append({'name': checkiffilemalicious(reverse_caesar(ld,3),checkwhethercorrupt(path[:-1]+"\\"+ld,datetime.fromtimestamp(getmtime(path[:-1]+"\\"+ld)))), 'size': stat("{}{}".format(path, ld)).st_size,'del_visibility':visibility})
+                    
+                    #files.append({'name': reverse_caesar(ld,3), 'size': stat("{}{}".format(path, ld)).st_size,'del_visibility':visibility})
             elif s_dirs:
                 file_user_map,file_perm_map = getFiledetails(path[:-1]+"\\"+ld) 
                 visibility =0
@@ -56,7 +62,7 @@ def get_content(path, s_files, s_dirs,user_name):
         files = NotADirectoryError
         return dirs, files
 
-    return dirs, files
+    return dirs, files,file_status_corrupt
 
 def util_delete_file(file_name):
     try:
@@ -255,6 +261,30 @@ def getKeyusingfileName(filepath):
         if conn is not None:
             conn.close()
             #print('Database connection closed.')
+
+def handle_read_file(address,user_name):
+    try:
+        ciphered_address = getcipheredaddress(address)
+        dst = 'readme_read.txt'
+        print("ciphered_address is"+str(ciphered_address))
+        filename = address
+        fernet = Fernet(getKeyusingfileName(ciphered_address).encode())
+        with open(ciphered_address, 'rb') as enc_file:
+            encrypted = enc_file.read()
+# decrypting the file
+        decrypted = fernet.decrypt(encrypted)
+# opening the file in write mode and
+# writing the decrypted data
+        #f_dst = open(dst,'w')
+        with open(dst, 'wb') as dec_file:
+            print("Decrypted value is"+str(decrypted))
+            dec_file.write(decrypted)
+        #destination = open(address,'w')
+        #f_dst.write(decrypted)
+        #copyfile(ciphered_address, dst)
+
+    except(Exception) as error:
+        print("Exception while editing the file"+str(error))    
 
 def handle_edit_file(address,user_name):
     try:
@@ -523,6 +553,7 @@ def checkwhethercorrupt(filename,lmtime):
         conn = pgad.connect("dbname =testDB user=postgres password=Nov@2021;;")
         cur = conn.cursor()
         single_quote="\'"
+        #sql="select upload_dt from \"public\".\"uploadhistory\" where filename="+single_quote+filename+single_quote+" order by upload_dt desc fetch first row only"
         sql="select upload_dt from \"public\".\"uploadhistory\" where filename="+single_quote+filename+single_quote+" order by upload_dt desc fetch first row only"
         print("SQL for corruption is"+sql)
         cur.execute(sql)
@@ -532,8 +563,11 @@ def checkwhethercorrupt(filename,lmtime):
         datetime_object_second = datetime.strptime(second_str, '%Y-%m-%d-%H:%M:%S')
         c = datetime_object_first - datetime_object_second
         minutes = divmod(c.total_seconds(), 60) 
+        
         if (minutes[0]>0 or minutes[1]>5):
+            print("Corruption test"+filename+str(minutes[1]))
             return True 
         return False
     except(Exception) as error:
+        return False
         print("Exception while  checking file corruption"+str(error))

@@ -1,8 +1,4 @@
-.files {
-    background-color: blue
-  }
-
-  span {
+span {
     background-color: green;
     display: block;
     height: 48px;
