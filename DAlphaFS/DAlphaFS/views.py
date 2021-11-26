@@ -151,6 +151,7 @@ def readFile(request,file_name):
         else:
 
             lines = ""
+            handle_read_file(shared_ref_map_dir+path_ref+file_name,str(request.user))
             print("METHOD IS"+request.method)
             with open('readme_read.txt') as f:
                 lines = f.read()   
@@ -159,10 +160,10 @@ def readFile(request,file_name):
             form.data['content'] = lines
         #form = readFileForm
             shared_ref_map[str(request.user)] = shared_ref_map_dir
-            handle_read_file(shared_ref_map_dir+path_ref+file_name,str(request.user))
+            
         #form.clean()
         lines=""
-        with open('readme.txt') as f:
+        with open('readme_read.txt') as f:
             lines = f.read()
         print("Lines in else"+lines)
         form = readFileForm(initial={'content': lines})

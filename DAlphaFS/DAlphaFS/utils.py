@@ -77,7 +77,7 @@ def handle_save_file(content, address,user_name):
     print("Upload address is"+address)
     print("Content is"+content)
     address = getcipheredaddress(address)
-    print()
+    print("Save check"+address)
     #with open(address, 'wb+') as destination:
     destination = open(address,'w')
     destination.write(content)
@@ -282,7 +282,7 @@ def handle_read_file(address,user_name):
         #destination = open(address,'w')
         #f_dst.write(decrypted)
         #copyfile(ciphered_address, dst)
-
+        upload_uploadHistory("READ",user_name,ciphered_address,datetime.today().strftime('%Y-%m-%d-%H:%M:%S'))
     except(Exception) as error:
         print("Exception while editing the file"+str(error))    
 
@@ -564,8 +564,8 @@ def checkwhethercorrupt(filename,lmtime):
         c = datetime_object_first - datetime_object_second
         minutes = divmod(c.total_seconds(), 60) 
         
-        if (minutes[0]>0 or minutes[1]>5):
-            print("Corruption test"+filename+str(minutes[1]))
+        if (minutes[0]>0 or minutes[1]>20):
+            print("Corruption test"+filename+"first"+first_str+"second"+second_str+str(minutes[1]))
             return True 
         return False
     except(Exception) as error:
